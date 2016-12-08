@@ -35,6 +35,11 @@
 		765288AE1DFA12C7001D59E1 /* String+Umbrella.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288AB1DFA12C7001D59E1 /* String+Umbrella.swift */; };
 		765288AF1DFA12C7001D59E1 /* UIColor+Nerdery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288AC1DFA12C7001D59E1 /* UIColor+Nerdery.swift */; };
 		765288B01DFA12C7001D59E1 /* UIColor+Nerdery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288AC1DFA12C7001D59E1 /* UIColor+Nerdery.swift */; };
+		765288B21DFA1454001D59E1 /* metrics.md in Sources */ = {isa = PBXBuildFile; fileRef = 765288B11DFA1454001D59E1 /* metrics.md */; };
+		765288B81DFA1471001D59E1 /* landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 765288B41DFA1471001D59E1 /* landscape.png */; };
+		765288B91DFA1471001D59E1 /* portrait-warm.png in Resources */ = {isa = PBXBuildFile; fileRef = 765288B51DFA1471001D59E1 /* portrait-warm.png */; };
+		765288BA1DFA1471001D59E1 /* portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 765288B61DFA1471001D59E1 /* portrait.png */; };
+		765288BB1DFA1471001D59E1 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 765288B71DFA1471001D59E1 /* settings.png */; };
 		D3161C681CF1E3A23F7D1005 /* Pods_UmbrellaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBB53C431D15F30C5FD5763 /* Pods_UmbrellaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +78,11 @@
 		765288A71DFA116D001D59E1 /* CurrentTempView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentTempView.swift; sourceTree = "<group>"; };
 		765288AB1DFA12C7001D59E1 /* String+Umbrella.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Umbrella.swift"; sourceTree = "<group>"; };
 		765288AC1DFA12C7001D59E1 /* UIColor+Nerdery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Nerdery.swift"; sourceTree = "<group>"; };
+		765288B11DFA1454001D59E1 /* metrics.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = metrics.md; sourceTree = "<group>"; };
+		765288B41DFA1471001D59E1 /* landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape.png; sourceTree = "<group>"; };
+		765288B51DFA1471001D59E1 /* portrait-warm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "portrait-warm.png"; sourceTree = "<group>"; };
+		765288B61DFA1471001D59E1 /* portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = portrait.png; sourceTree = "<group>"; };
+		765288B71DFA1471001D59E1 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		CD8FAADF10218537F7993666 /* Pods-UmbrellaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaTests/Pods-UmbrellaTests.release.xcconfig"; sourceTree = "<group>"; };
 		D6116B7652EA48ADD2E24EEA /* Pods-Umbrella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umbrella.release.xcconfig"; path = "Pods/Target Support Files/Pods-Umbrella/Pods-Umbrella.release.xcconfig"; sourceTree = "<group>"; };
 		DBBB53C431D15F30C5FD5763 /* Pods_UmbrellaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmbrellaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +140,7 @@
 		7652886A1DFA0F0A001D59E1 /* Umbrella */ = {
 			isa = PBXGroup;
 			children = (
+				765288B31DFA1471001D59E1 /* Reference Images */,
 				765288AA1DFA129A001D59E1 /* Extensions */,
 				7652888E1DFA1080001D59E1 /* Model */,
 				7652888F1DFA1085001D59E1 /* View */,
@@ -140,6 +151,7 @@
 				765288771DFA0F0A001D59E1 /* LaunchScreen.storyboard */,
 				7652887A1DFA0F0A001D59E1 /* Info.plist */,
 				765288721DFA0F0A001D59E1 /* Umbrella.xcdatamodeld */,
+				765288B11DFA1454001D59E1 /* metrics.md */,
 			);
 			path = Umbrella;
 			sourceTree = "<group>";
@@ -198,6 +210,17 @@
 				765288AC1DFA12C7001D59E1 /* UIColor+Nerdery.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		765288B31DFA1471001D59E1 /* Reference Images */ = {
+			isa = PBXGroup;
+			children = (
+				765288B41DFA1471001D59E1 /* landscape.png */,
+				765288B51DFA1471001D59E1 /* portrait-warm.png */,
+				765288B61DFA1471001D59E1 /* portrait.png */,
+				765288B71DFA1471001D59E1 /* settings.png */,
+			);
+			path = "Reference Images";
 			sourceTree = "<group>";
 		};
 		955DAD0B92BF56A58DF6B436 /* Pods */ = {
@@ -302,9 +325,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765288BA1DFA1471001D59E1 /* portrait.png in Resources */,
+				765288BB1DFA1471001D59E1 /* settings.png in Resources */,
+				765288B91DFA1471001D59E1 /* portrait-warm.png in Resources */,
 				765288791DFA0F0A001D59E1 /* LaunchScreen.storyboard in Resources */,
 				765288761DFA0F0A001D59E1 /* Assets.xcassets in Resources */,
 				765288711DFA0F0A001D59E1 /* Main.storyboard in Resources */,
+				765288B81DFA1471001D59E1 /* landscape.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765288B21DFA1454001D59E1 /* metrics.md in Sources */,
 				765288931DFA10CA001D59E1 /* Weather.swift in Sources */,
 				765288741DFA0F0A001D59E1 /* Umbrella.xcdatamodeld in Sources */,
 				765288A31DFA1138001D59E1 /* TempForecastLabel.swift in Sources */,

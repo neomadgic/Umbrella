@@ -46,9 +46,18 @@
                                             <constraint firstItem="d7s-TU-2Xm" firstAttribute="height" secondItem="dfv-VR-jIT" secondAttribute="height" id="IdI-Kj-THY"/>
                                         </constraints>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="12.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnq-mc-pvz" customClass="CurrentTemperatureLabel" customModule="Umbrella" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="59" width="355" height="60"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="60"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.54698833250000001" green="0.8980392157" blue="0.85121899170000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="xnq-mc-pvz" firstAttribute="top" secondItem="mPK-Qb-hNu" secondAttribute="bottom" constant="5" id="9dE-Tm-jan"/>
+                                    <constraint firstItem="xnq-mc-pvz" firstAttribute="leading" secondItem="SC2-KQ-Cgq" secondAttribute="leading" constant="10" id="Icu-cH-nSh"/>
+                                    <constraint firstAttribute="trailing" secondItem="xnq-mc-pvz" secondAttribute="trailing" constant="10" id="U1Y-Xo-HRC"/>
                                     <constraint firstAttribute="trailing" secondItem="mPK-Qb-hNu" secondAttribute="trailing" constant="10" id="Uwb-YX-d5C"/>
                                     <constraint firstItem="mPK-Qb-hNu" firstAttribute="top" secondItem="SC2-KQ-Cgq" secondAttribute="top" constant="30" id="qLG-0r-kdA"/>
                                     <constraint firstItem="mPK-Qb-hNu" firstAttribute="leading" secondItem="SC2-KQ-Cgq" secondAttribute="leading" constant="10" id="uFh-de-s1H"/>

@@ -19,6 +19,16 @@
 		765288941DFA10CA001D59E1 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288911DFA10CA001D59E1 /* Weather.swift */; };
 		765288951DFA10CA001D59E1 /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288921DFA10CA001D59E1 /* WeatherRequest.swift */; };
 		765288961DFA10CA001D59E1 /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288921DFA10CA001D59E1 /* WeatherRequest.swift */; };
+		7652889D1DFA1138001D59E1 /* CityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288981DFA1138001D59E1 /* CityLabel.swift */; };
+		7652889E1DFA1138001D59E1 /* CityLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288981DFA1138001D59E1 /* CityLabel.swift */; };
+		7652889F1DFA1138001D59E1 /* CurrentForecastLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288991DFA1138001D59E1 /* CurrentForecastLabel.swift */; };
+		765288A01DFA1138001D59E1 /* CurrentForecastLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288991DFA1138001D59E1 /* CurrentForecastLabel.swift */; };
+		765288A11DFA1138001D59E1 /* DayHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652889A1DFA1138001D59E1 /* DayHeaderLabel.swift */; };
+		765288A21DFA1138001D59E1 /* DayHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652889A1DFA1138001D59E1 /* DayHeaderLabel.swift */; };
+		765288A31DFA1138001D59E1 /* TempForecastLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652889B1DFA1138001D59E1 /* TempForecastLabel.swift */; };
+		765288A41DFA1138001D59E1 /* TempForecastLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652889B1DFA1138001D59E1 /* TempForecastLabel.swift */; };
+		765288A51DFA1138001D59E1 /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652889C1DFA1138001D59E1 /* TimeLabel.swift */; };
+		765288A61DFA1138001D59E1 /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652889C1DFA1138001D59E1 /* TimeLabel.swift */; };
 		D3161C681CF1E3A23F7D1005 /* Pods_UmbrellaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBB53C431D15F30C5FD5763 /* Pods_UmbrellaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +59,11 @@
 		765288851DFA0F0A001D59E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		765288911DFA10CA001D59E1 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		765288921DFA10CA001D59E1 /* WeatherRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
+		765288981DFA1138001D59E1 /* CityLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityLabel.swift; sourceTree = "<group>"; };
+		765288991DFA1138001D59E1 /* CurrentForecastLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentForecastLabel.swift; sourceTree = "<group>"; };
+		7652889A1DFA1138001D59E1 /* DayHeaderLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayHeaderLabel.swift; sourceTree = "<group>"; };
+		7652889B1DFA1138001D59E1 /* TempForecastLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempForecastLabel.swift; sourceTree = "<group>"; };
+		7652889C1DFA1138001D59E1 /* TimeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLabel.swift; sourceTree = "<group>"; };
 		CD8FAADF10218537F7993666 /* Pods-UmbrellaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaTests/Pods-UmbrellaTests.release.xcconfig"; sourceTree = "<group>"; };
 		D6116B7652EA48ADD2E24EEA /* Pods-Umbrella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umbrella.release.xcconfig"; path = "Pods/Target Support Files/Pods-Umbrella/Pods-Umbrella.release.xcconfig"; sourceTree = "<group>"; };
 		DBBB53C431D15F30C5FD5763 /* Pods_UmbrellaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmbrellaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +156,7 @@
 		7652888F1DFA1085001D59E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				765288971DFA1119001D59E1 /* UILabel */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -150,6 +166,18 @@
 			children = (
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		765288971DFA1119001D59E1 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				765288981DFA1138001D59E1 /* CityLabel.swift */,
+				765288991DFA1138001D59E1 /* CurrentForecastLabel.swift */,
+				7652889A1DFA1138001D59E1 /* DayHeaderLabel.swift */,
+				7652889B1DFA1138001D59E1 /* TempForecastLabel.swift */,
+				7652889C1DFA1138001D59E1 /* TimeLabel.swift */,
+			);
+			name = UILabel;
 			sourceTree = "<group>";
 		};
 		955DAD0B92BF56A58DF6B436 /* Pods */ = {
@@ -369,9 +397,14 @@
 			files = (
 				765288931DFA10CA001D59E1 /* Weather.swift in Sources */,
 				765288741DFA0F0A001D59E1 /* Umbrella.xcdatamodeld in Sources */,
+				765288A31DFA1138001D59E1 /* TempForecastLabel.swift in Sources */,
+				765288A51DFA1138001D59E1 /* TimeLabel.swift in Sources */,
+				7652889F1DFA1138001D59E1 /* CurrentForecastLabel.swift in Sources */,
 				7652886E1DFA0F0A001D59E1 /* ViewController.swift in Sources */,
 				765288951DFA10CA001D59E1 /* WeatherRequest.swift in Sources */,
 				7652886C1DFA0F0A001D59E1 /* AppDelegate.swift in Sources */,
+				765288A11DFA1138001D59E1 /* DayHeaderLabel.swift in Sources */,
+				7652889D1DFA1138001D59E1 /* CityLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,8 +413,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				765288961DFA10CA001D59E1 /* WeatherRequest.swift in Sources */,
+				765288A61DFA1138001D59E1 /* TimeLabel.swift in Sources */,
 				765288941DFA10CA001D59E1 /* Weather.swift in Sources */,
+				765288A41DFA1138001D59E1 /* TempForecastLabel.swift in Sources */,
+				765288A21DFA1138001D59E1 /* DayHeaderLabel.swift in Sources */,
+				765288A01DFA1138001D59E1 /* CurrentForecastLabel.swift in Sources */,
 				765288841DFA0F0A001D59E1 /* UmbrellaTests.swift in Sources */,
+				7652889E1DFA1138001D59E1 /* CityLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

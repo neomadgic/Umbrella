@@ -40,6 +40,7 @@
 		765288B91DFA1471001D59E1 /* portrait-warm.png in Resources */ = {isa = PBXBuildFile; fileRef = 765288B51DFA1471001D59E1 /* portrait-warm.png */; };
 		765288BA1DFA1471001D59E1 /* portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 765288B61DFA1471001D59E1 /* portrait.png */; };
 		765288BB1DFA1471001D59E1 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 765288B71DFA1471001D59E1 /* settings.png */; };
+		765288BE1DFA1530001D59E1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288BD1DFA1530001D59E1 /* Constants.swift */; };
 		D3161C681CF1E3A23F7D1005 /* Pods_UmbrellaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBB53C431D15F30C5FD5763 /* Pods_UmbrellaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		765288B51DFA1471001D59E1 /* portrait-warm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "portrait-warm.png"; sourceTree = "<group>"; };
 		765288B61DFA1471001D59E1 /* portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = portrait.png; sourceTree = "<group>"; };
 		765288B71DFA1471001D59E1 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		765288BD1DFA1530001D59E1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CD8FAADF10218537F7993666 /* Pods-UmbrellaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaTests/Pods-UmbrellaTests.release.xcconfig"; sourceTree = "<group>"; };
 		D6116B7652EA48ADD2E24EEA /* Pods-Umbrella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umbrella.release.xcconfig"; path = "Pods/Target Support Files/Pods-Umbrella/Pods-Umbrella.release.xcconfig"; sourceTree = "<group>"; };
 		DBBB53C431D15F30C5FD5763 /* Pods_UmbrellaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmbrellaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +144,7 @@
 			children = (
 				765288B31DFA1471001D59E1 /* Reference Images */,
 				765288AA1DFA129A001D59E1 /* Extensions */,
+				765288BC1DFA151F001D59E1 /* Util */,
 				7652888E1DFA1080001D59E1 /* Model */,
 				7652888F1DFA1085001D59E1 /* View */,
 				765288901DFA108C001D59E1 /* Controller */,
@@ -221,6 +224,14 @@
 				765288B71DFA1471001D59E1 /* settings.png */,
 			);
 			path = "Reference Images";
+			sourceTree = "<group>";
+		};
+		765288BC1DFA151F001D59E1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				765288BD1DFA1530001D59E1 /* Constants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		955DAD0B92BF56A58DF6B436 /* Pods */ = {
@@ -447,6 +458,7 @@
 				765288741DFA0F0A001D59E1 /* Umbrella.xcdatamodeld in Sources */,
 				765288A31DFA1138001D59E1 /* TempForecastLabel.swift in Sources */,
 				765288A51DFA1138001D59E1 /* TimeLabel.swift in Sources */,
+				765288BE1DFA1530001D59E1 /* Constants.swift in Sources */,
 				7652889F1DFA1138001D59E1 /* CurrentForecastLabel.swift in Sources */,
 				7652886E1DFA0F0A001D59E1 /* ViewController.swift in Sources */,
 				765288951DFA10CA001D59E1 /* WeatherRequest.swift in Sources */,

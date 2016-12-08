@@ -52,14 +52,34 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CtO-Ml-Mse">
+                                        <rect key="frame" x="8" y="119" width="359" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Clear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcf-m8-c96">
+                                                <rect key="frame" x="8" y="8" width="343" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Rcf-m8-c96" secondAttribute="bottom" constant="5" id="XWS-ci-1is"/>
+                                            <constraint firstItem="Rcf-m8-c96" firstAttribute="top" secondItem="CtO-Ml-Mse" secondAttribute="top" constant="5" id="h1H-7X-XQS"/>
+                                            <constraint firstItem="Rcf-m8-c96" firstAttribute="centerX" secondItem="CtO-Ml-Mse" secondAttribute="centerX" id="qNZ-hr-iTe"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.54698833250000001" green="0.8980392157" blue="0.85121899170000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="xnq-mc-pvz" firstAttribute="top" secondItem="mPK-Qb-hNu" secondAttribute="bottom" constant="5" id="9dE-Tm-jan"/>
+                                    <constraint firstAttribute="trailing" secondItem="CtO-Ml-Mse" secondAttribute="trailing" constant="8" id="EBh-NI-Fcx"/>
                                     <constraint firstItem="xnq-mc-pvz" firstAttribute="leading" secondItem="SC2-KQ-Cgq" secondAttribute="leading" constant="10" id="Icu-cH-nSh"/>
                                     <constraint firstAttribute="trailing" secondItem="xnq-mc-pvz" secondAttribute="trailing" constant="10" id="U1Y-Xo-HRC"/>
                                     <constraint firstAttribute="trailing" secondItem="mPK-Qb-hNu" secondAttribute="trailing" constant="10" id="Uwb-YX-d5C"/>
+                                    <constraint firstItem="CtO-Ml-Mse" firstAttribute="leading" secondItem="SC2-KQ-Cgq" secondAttribute="leading" constant="8" id="dcD-aa-Dh6"/>
                                     <constraint firstItem="mPK-Qb-hNu" firstAttribute="top" secondItem="SC2-KQ-Cgq" secondAttribute="top" constant="30" id="qLG-0r-kdA"/>
+                                    <constraint firstItem="CtO-Ml-Mse" firstAttribute="top" secondItem="xnq-mc-pvz" secondAttribute="bottom" id="rfY-Ce-AOg"/>
                                     <constraint firstItem="mPK-Qb-hNu" firstAttribute="leading" secondItem="SC2-KQ-Cgq" secondAttribute="leading" constant="10" id="uFh-de-s1H"/>
                                 </constraints>
                             </view>

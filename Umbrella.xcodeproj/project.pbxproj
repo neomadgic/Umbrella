@@ -29,6 +29,8 @@
 		765288A41DFA1138001D59E1 /* TempForecastLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652889B1DFA1138001D59E1 /* TempForecastLabel.swift */; };
 		765288A51DFA1138001D59E1 /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652889C1DFA1138001D59E1 /* TimeLabel.swift */; };
 		765288A61DFA1138001D59E1 /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7652889C1DFA1138001D59E1 /* TimeLabel.swift */; };
+		765288A81DFA116D001D59E1 /* CurrentTempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288A71DFA116D001D59E1 /* CurrentTempView.swift */; };
+		765288A91DFA116D001D59E1 /* CurrentTempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288A71DFA116D001D59E1 /* CurrentTempView.swift */; };
 		D3161C681CF1E3A23F7D1005 /* Pods_UmbrellaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBB53C431D15F30C5FD5763 /* Pods_UmbrellaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,7 @@
 		7652889A1DFA1138001D59E1 /* DayHeaderLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayHeaderLabel.swift; sourceTree = "<group>"; };
 		7652889B1DFA1138001D59E1 /* TempForecastLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempForecastLabel.swift; sourceTree = "<group>"; };
 		7652889C1DFA1138001D59E1 /* TimeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLabel.swift; sourceTree = "<group>"; };
+		765288A71DFA116D001D59E1 /* CurrentTempView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentTempView.swift; sourceTree = "<group>"; };
 		CD8FAADF10218537F7993666 /* Pods-UmbrellaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaTests/Pods-UmbrellaTests.release.xcconfig"; sourceTree = "<group>"; };
 		D6116B7652EA48ADD2E24EEA /* Pods-Umbrella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umbrella.release.xcconfig"; path = "Pods/Target Support Files/Pods-Umbrella/Pods-Umbrella.release.xcconfig"; sourceTree = "<group>"; };
 		DBBB53C431D15F30C5FD5763 /* Pods_UmbrellaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmbrellaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,11 +124,10 @@
 		7652886A1DFA0F0A001D59E1 /* Umbrella */ = {
 			isa = PBXGroup;
 			children = (
-				765288901DFA108C001D59E1 /* Controller */,
-				7652888F1DFA1085001D59E1 /* View */,
 				7652888E1DFA1080001D59E1 /* Model */,
+				7652888F1DFA1085001D59E1 /* View */,
+				765288901DFA108C001D59E1 /* Controller */,
 				7652886B1DFA0F0A001D59E1 /* AppDelegate.swift */,
-				7652886D1DFA0F0A001D59E1 /* ViewController.swift */,
 				7652886F1DFA0F0A001D59E1 /* Main.storyboard */,
 				765288751DFA0F0A001D59E1 /* Assets.xcassets */,
 				765288771DFA0F0A001D59E1 /* LaunchScreen.storyboard */,
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				765288971DFA1119001D59E1 /* UILabel */,
+				765288A71DFA116D001D59E1 /* CurrentTempView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 		765288901DFA108C001D59E1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7652886D1DFA0F0A001D59E1 /* ViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -402,6 +406,7 @@
 				7652889F1DFA1138001D59E1 /* CurrentForecastLabel.swift in Sources */,
 				7652886E1DFA0F0A001D59E1 /* ViewController.swift in Sources */,
 				765288951DFA10CA001D59E1 /* WeatherRequest.swift in Sources */,
+				765288A81DFA116D001D59E1 /* CurrentTempView.swift in Sources */,
 				7652886C1DFA0F0A001D59E1 /* AppDelegate.swift in Sources */,
 				765288A11DFA1138001D59E1 /* DayHeaderLabel.swift in Sources */,
 				7652889D1DFA1138001D59E1 /* CityLabel.swift in Sources */,
@@ -417,6 +422,7 @@
 				765288941DFA10CA001D59E1 /* Weather.swift in Sources */,
 				765288A41DFA1138001D59E1 /* TempForecastLabel.swift in Sources */,
 				765288A21DFA1138001D59E1 /* DayHeaderLabel.swift in Sources */,
+				765288A91DFA116D001D59E1 /* CurrentTempView.swift in Sources */,
 				765288A01DFA1138001D59E1 /* CurrentForecastLabel.swift in Sources */,
 				765288841DFA0F0A001D59E1 /* UmbrellaTests.swift in Sources */,
 				7652889E1DFA1138001D59E1 /* CityLabel.swift in Sources */,

@@ -15,6 +15,10 @@
 		765288761DFA0F0A001D59E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 765288751DFA0F0A001D59E1 /* Assets.xcassets */; };
 		765288791DFA0F0A001D59E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 765288771DFA0F0A001D59E1 /* LaunchScreen.storyboard */; };
 		765288841DFA0F0A001D59E1 /* UmbrellaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288831DFA0F0A001D59E1 /* UmbrellaTests.swift */; };
+		765288931DFA10CA001D59E1 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288911DFA10CA001D59E1 /* Weather.swift */; };
+		765288941DFA10CA001D59E1 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288911DFA10CA001D59E1 /* Weather.swift */; };
+		765288951DFA10CA001D59E1 /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288921DFA10CA001D59E1 /* WeatherRequest.swift */; };
+		765288961DFA10CA001D59E1 /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288921DFA10CA001D59E1 /* WeatherRequest.swift */; };
 		D3161C681CF1E3A23F7D1005 /* Pods_UmbrellaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBB53C431D15F30C5FD5763 /* Pods_UmbrellaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,8 @@
 		7652887F1DFA0F0A001D59E1 /* UmbrellaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UmbrellaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		765288831DFA0F0A001D59E1 /* UmbrellaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmbrellaTests.swift; sourceTree = "<group>"; };
 		765288851DFA0F0A001D59E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		765288911DFA10CA001D59E1 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		765288921DFA10CA001D59E1 /* WeatherRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
 		CD8FAADF10218537F7993666 /* Pods-UmbrellaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaTests/Pods-UmbrellaTests.release.xcconfig"; sourceTree = "<group>"; };
 		D6116B7652EA48ADD2E24EEA /* Pods-Umbrella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umbrella.release.xcconfig"; path = "Pods/Target Support Files/Pods-Umbrella/Pods-Umbrella.release.xcconfig"; sourceTree = "<group>"; };
 		DBBB53C431D15F30C5FD5763 /* Pods_UmbrellaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmbrellaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +106,9 @@
 		7652886A1DFA0F0A001D59E1 /* Umbrella */ = {
 			isa = PBXGroup;
 			children = (
+				765288901DFA108C001D59E1 /* Controller */,
+				7652888F1DFA1085001D59E1 /* View */,
+				7652888E1DFA1080001D59E1 /* Model */,
 				7652886B1DFA0F0A001D59E1 /* AppDelegate.swift */,
 				7652886D1DFA0F0A001D59E1 /* ViewController.swift */,
 				7652886F1DFA0F0A001D59E1 /* Main.storyboard */,
@@ -118,6 +127,29 @@
 				765288851DFA0F0A001D59E1 /* Info.plist */,
 			);
 			path = UmbrellaTests;
+			sourceTree = "<group>";
+		};
+		7652888E1DFA1080001D59E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				765288911DFA10CA001D59E1 /* Weather.swift */,
+				765288921DFA10CA001D59E1 /* WeatherRequest.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7652888F1DFA1085001D59E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		765288901DFA108C001D59E1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		955DAD0B92BF56A58DF6B436 /* Pods */ = {
@@ -280,7 +312,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7373DDA7E92112FD78128F60 /* [CP] Embed Pods Frameworks */ = {
@@ -325,7 +357,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -335,8 +367,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765288931DFA10CA001D59E1 /* Weather.swift in Sources */,
 				765288741DFA0F0A001D59E1 /* Umbrella.xcdatamodeld in Sources */,
 				7652886E1DFA0F0A001D59E1 /* ViewController.swift in Sources */,
+				765288951DFA10CA001D59E1 /* WeatherRequest.swift in Sources */,
 				7652886C1DFA0F0A001D59E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +379,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				765288961DFA10CA001D59E1 /* WeatherRequest.swift in Sources */,
+				765288941DFA10CA001D59E1 /* Weather.swift in Sources */,
 				765288841DFA0F0A001D59E1 /* UmbrellaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +587,7 @@
 				7652888A1DFA0F0A001D59E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7652888B1DFA0F0A001D59E1 /* Build configuration list for PBXNativeTarget "UmbrellaTests" */ = {
 			isa = XCConfigurationList;
@@ -559,6 +596,7 @@
 				7652888D1DFA0F0A001D59E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

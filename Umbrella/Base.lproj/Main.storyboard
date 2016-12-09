@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="landscape">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SC2-KQ-Cgq" customClass="CurrentTempView" customModule="Umbrella" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CtO-Ml-Mse">
                                         <rect key="frame" x="0.0" y="242" width="240" height="42"/>
@@ -44,7 +44,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnq-mc-pvz" customClass="CurrentTemperatureLabel" customModule="Umbrella" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="177" width="240" height="60"/>
+                                        <rect key="frame" x="0.0" y="71.5" width="320" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="hjh-CJ-09w"/>
                                         </constraints>
@@ -120,8 +120,9 @@
                                         <include reference="kap-o4-Mld"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
+                                        <include reference="eEK-jo-SqG"/>
                                         <include reference="jzY-fi-K6P"/>
                                         <include reference="ruy-d6-HBS"/>
                                         <include reference="a4Z-kO-NO6"/>
@@ -129,11 +130,6 @@
                                         <include reference="d8N-jr-0q5"/>
                                         <include reference="DDb-eh-hnf"/>
                                         <include reference="pl4-IS-HAL"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="eEK-jo-SqG"/>
                                     </mask>
                                 </variation>
                             </view>

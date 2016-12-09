@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -44,7 +45,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnq-mc-pvz" customClass="CurrentTemperatureLabel" customModule="Umbrella" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="71.666666666666657" width="414" height="59.999999999999972"/>
+                                        <rect key="frame" x="0.0" y="71" width="414" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="hjh-CJ-09w"/>
                                         </constraints>
@@ -143,7 +144,7 @@
                                     <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SBp-6g-DSB">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherCell" id="SBp-6g-DSB" customClass="WeatherCell" customModule="Umbrella" customModuleProvider="target">
                                         <rect key="frame" x="20" y="70" width="62" height="62"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -152,34 +153,50 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="I7m-wK-O4p">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherHeaderView" id="I7m-wK-O4p" customClass="WeatherHeaderView" customModule="Umbrella" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5L-C0-4As" customClass="HeaderColorView" customModule="Umbrella" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="498" height="2"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="2"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="2" id="lHx-th-iHC"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uO1-nS-QhB" customClass="HeaderColorView" customModule="Umbrella" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="48" width="498" height="1"/>
+                                            <rect key="frame" x="0.0" y="48" width="414" height="1"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="A3y-Bj-Vbh"/>
                                             </constraints>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTc-nJ-XEj" customClass="DayHeaderLabel" customModule="Umbrella" customModuleProvider="target">
+                                            <rect key="frame" x="28" y="8" width="170" height="34"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="uO1-nS-QhB" firstAttribute="leading" secondItem="I7m-wK-O4p" secondAttribute="leading" id="4cd-r3-Amb"/>
                                         <constraint firstAttribute="trailing" secondItem="L5L-C0-4As" secondAttribute="trailing" id="Cjn-Pe-cmx"/>
+                                        <constraint firstItem="JTc-nJ-XEj" firstAttribute="top" secondItem="L5L-C0-4As" secondAttribute="bottom" constant="6" id="DLI-G8-fuD"/>
                                         <constraint firstItem="L5L-C0-4As" firstAttribute="leading" secondItem="I7m-wK-O4p" secondAttribute="leading" id="N4S-ne-nq9"/>
                                         <constraint firstItem="L5L-C0-4As" firstAttribute="top" secondItem="I7m-wK-O4p" secondAttribute="top" id="R0T-2d-kyF"/>
+                                        <constraint firstItem="JTc-nJ-XEj" firstAttribute="leading" secondItem="I7m-wK-O4p" secondAttribute="leadingMargin" constant="20" id="Uab-yK-NjJ"/>
+                                        <constraint firstItem="uO1-nS-QhB" firstAttribute="top" secondItem="JTc-nJ-XEj" secondAttribute="bottom" constant="6" id="ZVs-Qp-iZr"/>
                                         <constraint firstAttribute="bottom" secondItem="uO1-nS-QhB" secondAttribute="bottom" constant="1" id="kHo-3a-kba"/>
                                         <constraint firstAttribute="trailing" secondItem="uO1-nS-QhB" secondAttribute="trailing" id="rwF-kl-UAA"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="DayHeaderLbl" destination="JTc-nJ-XEj" id="DXN-H8-vdj"/>
+                                    </connections>
                                 </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="glE-H8-t2F"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="GCU-Kx-zdq"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -220,6 +237,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="2H5-1B-yyo" id="St3-mv-rcD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

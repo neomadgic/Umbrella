@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SC2-KQ-Cgq" customClass="CurrentTempView" customModule="Umbrella" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="414"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CtO-Ml-Mse">
                                         <rect key="frame" x="0.0" y="242" width="240" height="42"/>
@@ -44,17 +44,11 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnq-mc-pvz" customClass="CurrentTemperatureLabel" customModule="Umbrella" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="71.5" width="320" height="60"/>
+                                        <rect key="frame" x="0.0" y="177" width="240" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="hjh-CJ-09w"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="60"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Minneapolis, MN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfv-VR-jIT" customClass="CityLabel" customModule="Umbrella" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="142" width="181" height="25"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -65,6 +59,12 @@
                                         </constraints>
                                         <state key="normal" image="settingsCog"/>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Minneapolis, MN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfv-VR-jIT" customClass="CityLabel" customModule="Umbrella" customModuleProvider="target">
+                                        <rect key="frame" x="127" y="38" width="181" height="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.54698833250000001" green="0.8980392157" blue="0.85121899170000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -94,13 +94,13 @@
                                     <mask key="constraints">
                                         <exclude reference="eEK-jo-SqG"/>
                                         <exclude reference="zvb-Pa-ZVN"/>
-                                        <exclude reference="0MV-jD-Jlj"/>
-                                        <exclude reference="jzY-fi-K6P"/>
-                                        <exclude reference="ruy-d6-HBS"/>
                                         <exclude reference="IYT-oG-5eM"/>
                                         <exclude reference="M69-uF-p9z"/>
                                         <exclude reference="a4Z-kO-NO6"/>
                                         <exclude reference="c0J-Tq-xOh"/>
+                                        <exclude reference="0MV-jD-Jlj"/>
+                                        <exclude reference="jzY-fi-K6P"/>
+                                        <exclude reference="ruy-d6-HBS"/>
                                         <exclude reference="2Md-jd-sR9"/>
                                         <exclude reference="XCL-tg-i3f"/>
                                         <exclude reference="d8N-jr-0q5"/>
@@ -112,10 +112,10 @@
                                 <variation key="heightClass=compact">
                                     <mask key="constraints">
                                         <include reference="zvb-Pa-ZVN"/>
-                                        <include reference="0MV-jD-Jlj"/>
                                         <include reference="IYT-oG-5eM"/>
                                         <include reference="M69-uF-p9z"/>
                                         <include reference="c0J-Tq-xOh"/>
+                                        <include reference="0MV-jD-Jlj"/>
                                         <include reference="2Md-jd-sR9"/>
                                         <include reference="kap-o4-Mld"/>
                                     </mask>
@@ -123,9 +123,9 @@
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="eEK-jo-SqG"/>
+                                        <include reference="a4Z-kO-NO6"/>
                                         <include reference="jzY-fi-K6P"/>
                                         <include reference="ruy-d6-HBS"/>
-                                        <include reference="a4Z-kO-NO6"/>
                                         <include reference="XCL-tg-i3f"/>
                                         <include reference="d8N-jr-0q5"/>
                                         <include reference="DDb-eh-hnf"/>
@@ -133,35 +133,92 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fIx-Yd-nYO" customClass="WeatherForecastView" customModule="Umbrella" customModuleProvider="target">
+                                <rect key="frame" x="240" y="0.0" width="488" height="414"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hRj-rv-OfG">
+                                        <rect key="frame" x="54" y="80" width="405" height="221"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Zu-ce-YBk">
+                                            <size key="itemSize" width="411" height="64"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pRA-vw-eSR">
+                                                <rect key="frame" x="0.0" y="10" width="411" height="64"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="411" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXn-uJ-l2G">
+                                                            <rect key="frame" x="85" y="0.0" width="240" height="64"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                    </subviews>
+                                                </view>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0VB-5f-K0a">
+                                                <rect key="frame" x="0.0" y="84" width="95" height="117"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="95" height="117"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                                <size key="customSize" width="95" height="117"/>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="SC2-KQ-Cgq" secondAttribute="trailing" id="85A-kg-B9a"/>
+                            <constraint firstItem="fIx-Yd-nYO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DWG-pn-6rZ"/>
+                            <constraint firstItem="fIx-Yd-nYO" firstAttribute="leading" secondItem="SC2-KQ-Cgq" secondAttribute="trailing" id="STp-1e-m9H"/>
                             <constraint firstItem="SC2-KQ-Cgq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VEb-6N-ynD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fIx-Yd-nYO" secondAttribute="bottom" id="Zfp-IJ-VeE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SC2-KQ-Cgq" secondAttribute="bottom" id="a4H-tP-y33"/>
                             <constraint firstItem="SC2-KQ-Cgq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qBd-yo-ooX"/>
+                            <constraint firstItem="fIx-Yd-nYO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rfV-Tt-vNM"/>
+                            <constraint firstItem="fIx-Yd-nYO" firstAttribute="top" secondItem="SC2-KQ-Cgq" secondAttribute="bottom" id="s48-7F-wzK"/>
+                            <constraint firstAttribute="trailing" secondItem="fIx-Yd-nYO" secondAttribute="trailing" id="w7S-Xc-3E9"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="85A-kg-B9a"/>
+                                <exclude reference="DWG-pn-6rZ"/>
+                                <exclude reference="STp-1e-m9H"/>
+                                <exclude reference="rfV-Tt-vNM"/>
+                                <exclude reference="s48-7F-wzK"/>
                                 <exclude reference="a4H-tP-y33"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
+                                <include reference="STp-1e-m9H"/>
+                                <include reference="rfV-Tt-vNM"/>
                                 <include reference="a4H-tP-y33"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="85A-kg-B9a"/>
+                                <include reference="DWG-pn-6rZ"/>
+                                <include reference="s48-7F-wzK"/>
                             </mask>
                         </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="115.7608695652174" y="114.49275362318842"/>
+            <point key="canvasLocation" x="114.1304347826087" y="113.04347826086958"/>
         </scene>
     </scenes>
     <resources>

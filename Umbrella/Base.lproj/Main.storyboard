@@ -136,30 +136,29 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3f3-tM-0Dk">
                                 <rect key="frame" x="0.0" y="162" width="414" height="574"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g1H-w0-RXM" customClass="DateHeaderView" customModule="Umbrella" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSz-GH-gDX">
-                                                <rect key="frame" x="20" y="8" width="201" height="34"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2H5-1B-yyo">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="214"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="OSz-GH-gDX" firstAttribute="leading" secondItem="g1H-w0-RXM" secondAttribute="leading" constant="20" id="5m5-JE-B1y"/>
-                                            <constraint firstItem="OSz-GH-gDX" firstAttribute="top" secondItem="g1H-w0-RXM" secondAttribute="top" constant="8" id="DvE-cC-eiy"/>
-                                            <constraint firstAttribute="bottom" secondItem="OSz-GH-gDX" secondAttribute="bottom" constant="8" id="Dxv-3U-u8p"/>
-                                            <constraint firstAttribute="height" constant="50" id="vep-By-Q8L"/>
-                                        </constraints>
-                                    </view>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vzx-KB-cxV">
+                                            <size key="itemSize" width="89" height="121"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SBp-6g-DSB">
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="62"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="62" height="62"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </view>
+                                                <size key="customSize" width="62" height="62"/>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="g1H-w0-RXM" secondAttribute="trailing" id="33H-Uv-tuX"/>
-                                    <constraint firstItem="g1H-w0-RXM" firstAttribute="leading" secondItem="3f3-tM-0Dk" secondAttribute="leading" id="FdW-Nq-D1n"/>
-                                    <constraint firstItem="g1H-w0-RXM" firstAttribute="top" secondItem="3f3-tM-0Dk" secondAttribute="top" id="Wg3-DC-2Ek"/>
-                                </constraints>
                                 <inset key="scrollIndicatorInsets" minX="20" minY="20" maxX="20" maxY="20"/>
                             </scrollView>
                         </subviews>

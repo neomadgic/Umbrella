@@ -14,6 +14,6 @@ class CurrentTempView: UIView {
     override func awakeFromNib() {
         
         backgroundColor = warmColor
+        
     }
-    
 }

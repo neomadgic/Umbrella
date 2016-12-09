@@ -43,10 +43,9 @@
 		765288C11DFA1CAB001D59E1 /* CurrentTemperatureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288BF1DFA1CAB001D59E1 /* CurrentTemperatureLabel.swift */; };
 		765288C31DFA2CF9001D59E1 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288C21DFA2CF9001D59E1 /* SettingsButton.swift */; };
 		765288C41DFA2CF9001D59E1 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288C21DFA2CF9001D59E1 /* SettingsButton.swift */; };
-		769159391DFA7E16003D02AA /* WeatherForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769159381DFA7E16003D02AA /* WeatherForecastView.swift */; };
-		7691593A1DFA7E16003D02AA /* WeatherForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769159381DFA7E16003D02AA /* WeatherForecastView.swift */; };
 		7691593F1DFA891E003D02AA /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691593E1DFA891E003D02AA /* WeatherCell.swift */; };
 		769159401DFA891E003D02AA /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691593E1DFA891E003D02AA /* WeatherCell.swift */; };
+		76A3A2021DFB1F7C00CE8D6E /* HeaderColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A3A2011DFB1F7C00CE8D6E /* HeaderColorView.swift */; };
 		D3161C681CF1E3A23F7D1005 /* Pods_UmbrellaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBBB53C431D15F30C5FD5763 /* Pods_UmbrellaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,8 +91,8 @@
 		765288BD1DFA1530001D59E1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		765288BF1DFA1CAB001D59E1 /* CurrentTemperatureLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentTemperatureLabel.swift; sourceTree = "<group>"; };
 		765288C21DFA2CF9001D59E1 /* SettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
-		769159381DFA7E16003D02AA /* WeatherForecastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherForecastView.swift; sourceTree = "<group>"; };
 		7691593E1DFA891E003D02AA /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		76A3A2011DFB1F7C00CE8D6E /* HeaderColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderColorView.swift; sourceTree = "<group>"; };
 		CD8FAADF10218537F7993666 /* Pods-UmbrellaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaTests/Pods-UmbrellaTests.release.xcconfig"; sourceTree = "<group>"; };
 		D6116B7652EA48ADD2E24EEA /* Pods-Umbrella.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Umbrella.release.xcconfig"; path = "Pods/Target Support Files/Pods-Umbrella/Pods-Umbrella.release.xcconfig"; sourceTree = "<group>"; };
 		DBBB53C431D15F30C5FD5763 /* Pods_UmbrellaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UmbrellaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,8 +191,8 @@
 				765288971DFA1119001D59E1 /* UILabel */,
 				765288A71DFA116D001D59E1 /* CurrentTempView.swift */,
 				765288C21DFA2CF9001D59E1 /* SettingsButton.swift */,
-				769159381DFA7E16003D02AA /* WeatherForecastView.swift */,
 				7691593E1DFA891E003D02AA /* WeatherCell.swift */,
+				76A3A2011DFB1F7C00CE8D6E /* HeaderColorView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -466,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				765288B21DFA1454001D59E1 /* metrics.md in Sources */,
+				76A3A2021DFB1F7C00CE8D6E /* HeaderColorView.swift in Sources */,
 				765288931DFA10CA001D59E1 /* Weather.swift in Sources */,
 				765288741DFA0F0A001D59E1 /* Umbrella.xcdatamodeld in Sources */,
 				765288A31DFA1138001D59E1 /* TempForecastLabel.swift in Sources */,
@@ -479,7 +479,6 @@
 				765288C01DFA1CAB001D59E1 /* CurrentTemperatureLabel.swift in Sources */,
 				7652886C1DFA0F0A001D59E1 /* AppDelegate.swift in Sources */,
 				765288C31DFA2CF9001D59E1 /* SettingsButton.swift in Sources */,
-				769159391DFA7E16003D02AA /* WeatherForecastView.swift in Sources */,
 				765288A11DFA1138001D59E1 /* DayHeaderLabel.swift in Sources */,
 				765288AD1DFA12C7001D59E1 /* String+Umbrella.swift in Sources */,
 				7652889D1DFA1138001D59E1 /* CityLabel.swift in Sources */,
@@ -499,7 +498,6 @@
 				765288A41DFA1138001D59E1 /* TempForecastLabel.swift in Sources */,
 				765288C11DFA1CAB001D59E1 /* CurrentTemperatureLabel.swift in Sources */,
 				765288A21DFA1138001D59E1 /* DayHeaderLabel.swift in Sources */,
-				7691593A1DFA7E16003D02AA /* WeatherForecastView.swift in Sources */,
 				765288A91DFA116D001D59E1 /* CurrentTempView.swift in Sources */,
 				765288B01DFA12C7001D59E1 /* UIColor+Nerdery.swift in Sources */,
 				765288841DFA0F0A001D59E1 /* UmbrellaTests.swift in Sources */,

@@ -10,4 +10,14 @@ import UIKit
 
 class DateCell: UICollectionViewCell {
     
+    @IBOutlet weak var dayLabel: DayHeaderLabel!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    func configureCell(day: String) {
+        dayLabel.text = day
+    }
 }

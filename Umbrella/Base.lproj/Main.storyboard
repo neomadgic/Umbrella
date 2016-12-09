@@ -139,7 +139,7 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hRj-rv-OfG">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="575"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Zu-ce-YBk">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Zu-ce-YBk">
                                             <size key="itemSize" width="411" height="64"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -147,23 +147,65 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DateCell" id="pRA-vw-eSR" customClass="DateCell" customModule="Umbrella" customModuleProvider="target">
-                                                <rect key="frame" x="2" y="0.0" width="411" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="411" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="411" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXn-uJ-l2G">
-                                                            <rect key="frame" x="85" y="0.0" width="240" height="64"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXn-uJ-l2G">
+                                                            <rect key="frame" x="0.0" y="0.0" width="411" height="50"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EU3-3Y-gjr" customClass="HeaderBarView" customModule="Umbrella" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="411" height="2"/>
+                                                                    <color key="backgroundColor" red="0.61176470589999998" green="0.1529411765" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="2" id="2mG-Tf-RUD"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y04-ji-yqx" customClass="HeaderBarView" customModule="Umbrella" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="48" width="411" height="1"/>
+                                                                    <color key="backgroundColor" red="0.61176470589999998" green="0.1529411765" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="1" id="Qwm-50-O7e"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyR-dA-deL" customClass="DayHeaderLabel" customModule="Umbrella" customModuleProvider="target">
+                                                                    <rect key="frame" x="20" y="8" width="211" height="34"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="EU3-3Y-gjr" firstAttribute="leading" secondItem="AXn-uJ-l2G" secondAttribute="leading" id="41e-Ny-Zzu"/>
+                                                                <constraint firstItem="EU3-3Y-gjr" firstAttribute="top" secondItem="AXn-uJ-l2G" secondAttribute="top" id="6ch-W9-Nue"/>
+                                                                <constraint firstItem="UyR-dA-deL" firstAttribute="leading" secondItem="AXn-uJ-l2G" secondAttribute="leading" constant="20" id="KbP-oq-caG"/>
+                                                                <constraint firstItem="UyR-dA-deL" firstAttribute="top" secondItem="EU3-3Y-gjr" secondAttribute="bottom" constant="6" id="KrL-b1-BV3"/>
+                                                                <constraint firstItem="Y04-ji-yqx" firstAttribute="leading" secondItem="AXn-uJ-l2G" secondAttribute="leading" id="NAX-xi-AyX"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Y04-ji-yqx" secondAttribute="trailing" id="On0-gQ-3wa"/>
+                                                                <constraint firstAttribute="trailing" secondItem="EU3-3Y-gjr" secondAttribute="trailing" id="fUS-hn-cTi"/>
+                                                                <constraint firstAttribute="height" constant="50" id="gRI-FO-j8z"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Y04-ji-yqx" secondAttribute="bottom" constant="1" id="k6A-Tq-B83"/>
+                                                                <constraint firstItem="Y04-ji-yqx" firstAttribute="top" secondItem="UyR-dA-deL" secondAttribute="bottom" constant="6" id="oKH-83-yh8"/>
+                                                            </constraints>
                                                         </view>
                                                     </subviews>
                                                 </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="AXn-uJ-l2G" secondAttribute="trailing" id="1S0-2S-8Fo"/>
+                                                    <constraint firstItem="AXn-uJ-l2G" firstAttribute="leading" secondItem="pRA-vw-eSR" secondAttribute="leading" id="OnJ-gq-Agb"/>
+                                                    <constraint firstItem="AXn-uJ-l2G" firstAttribute="top" secondItem="pRA-vw-eSR" secondAttribute="top" id="daI-8f-i7N"/>
+                                                    <constraint firstAttribute="bottom" secondItem="AXn-uJ-l2G" secondAttribute="bottom" id="mZE-ir-2sa"/>
+                                                </constraints>
                                                 <size key="customSize" width="411" height="50"/>
+                                                <connections>
+                                                    <outlet property="dayLabel" destination="UyR-dA-deL" id="O18-4X-Ush"/>
+                                                </connections>
                                             </collectionViewCell>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherCell" id="0VB-5f-K0a" customClass="WeatherCell" customModule="Umbrella" customModuleProvider="target">
-                                                <rect key="frame" x="160" y="60" width="95" height="117"/>
+                                                <rect key="frame" x="158" y="60" width="95" height="117"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="95" height="117"/>

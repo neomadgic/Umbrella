@@ -11,3 +11,4 @@ import UIKit
 
 let warmColor = UIColor(0xFF9800)
 let coolColor = UIColor(0x03A9F4)
+let headerColor = UIColor(0x888888)

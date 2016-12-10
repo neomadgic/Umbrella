@@ -23,6 +23,20 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func onBlurBtnPressed(_ sender: Any) {
+        
+        updateBlur()
+    }
+    
+    
+    func updateBlur() {
+        
+        UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, true, 1)
+        self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: true)
+        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+    }
 }
 
 //MARK: - UICollectionViewDataSource

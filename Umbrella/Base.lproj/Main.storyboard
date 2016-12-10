@@ -265,7 +265,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kY2-V3-zML">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.29803921570000003" green="0.92941176469999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.87914663459999998" green="0.87914663459999998" blue="0.87914663459999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="bZK-av-KvE" appends="YES" id="ZAi-sM-5C6"/>
@@ -299,12 +299,25 @@
                                     <constraint firstAttribute="trailing" secondItem="SC7-XX-yeG" secondAttribute="trailing" constant="10" id="izC-8A-b69"/>
                                 </constraints>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="S8h-TF-mHb" customClass="TemperatureSegmentedControl" customModule="Umbrella" customModuleProvider="target">
+                                <rect key="frame" x="95" y="134" width="225" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="9ZF-NZ-mAw"/>
+                                    <constraint firstAttribute="height" constant="25" id="r38-bZ-TVK"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Farenheit"/>
+                                    <segment title="Celsius"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="0ko-6D-KRN" secondAttribute="trailing" constant="15" id="4R7-8Y-D1I"/>
+                            <constraint firstItem="S8h-TF-mHb" firstAttribute="centerX" secondItem="Wkx-eN-96t" secondAttribute="centerX" id="EtC-Sj-Vk1"/>
                             <constraint firstItem="0ko-6D-KRN" firstAttribute="top" secondItem="dR0-hq-glp" secondAttribute="bottom" constant="45" id="SDs-gZ-MVJ"/>
                             <constraint firstItem="0ko-6D-KRN" firstAttribute="leading" secondItem="Wkx-eN-96t" secondAttribute="leadingMargin" constant="15" id="cdJ-xu-elY"/>
+                            <constraint firstItem="S8h-TF-mHb" firstAttribute="top" secondItem="0ko-6D-KRN" secondAttribute="bottom" constant="25" id="dTc-rF-v8c"/>
                         </constraints>
                     </view>
                 </viewController>

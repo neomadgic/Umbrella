@@ -9,11 +9,12 @@
 import UIKit
 
 class SettingsVC: UIViewController {
-
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingsVC.dismissKeyboard))
+        createTapToHideKeyboard(tap: tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +22,14 @@ class SettingsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func createTapToHideKeyboard(tap: UIGestureRecognizer) {
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
 
     /*
     // MARK: - Navigation

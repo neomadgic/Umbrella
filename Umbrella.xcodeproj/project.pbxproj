@@ -45,6 +45,10 @@
 		765288C41DFA2CF9001D59E1 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765288C21DFA2CF9001D59E1 /* SettingsButton.swift */; };
 		7691593F1DFA891E003D02AA /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691593E1DFA891E003D02AA /* WeatherCell.swift */; };
 		769159401DFA891E003D02AA /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691593E1DFA891E003D02AA /* WeatherCell.swift */; };
+		769C46F91DFB71DB00559651 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769C46F81DFB71DB00559651 /* SettingsVC.swift */; };
+		769C46FA1DFB71DB00559651 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769C46F81DFB71DB00559651 /* SettingsVC.swift */; };
+		769C46FF1DFB7E5000559651 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769C46FE1DFB7E5000559651 /* SearchBarView.swift */; };
+		769C47001DFB7E5000559651 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769C46FE1DFB7E5000559651 /* SearchBarView.swift */; };
 		76A3A2021DFB1F7C00CE8D6E /* HeaderColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A3A2011DFB1F7C00CE8D6E /* HeaderColorView.swift */; };
 		76A3A2041DFB225F00CE8D6E /* WeatherHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A3A2031DFB225F00CE8D6E /* WeatherHeaderView.swift */; };
 		76A3A2051DFB225F00CE8D6E /* WeatherHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A3A2031DFB225F00CE8D6E /* WeatherHeaderView.swift */; };
@@ -94,6 +98,8 @@
 		765288BF1DFA1CAB001D59E1 /* CurrentTemperatureLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentTemperatureLabel.swift; sourceTree = "<group>"; };
 		765288C21DFA2CF9001D59E1 /* SettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
 		7691593E1DFA891E003D02AA /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		769C46F81DFB71DB00559651 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		769C46FE1DFB7E5000559651 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		76A3A2011DFB1F7C00CE8D6E /* HeaderColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderColorView.swift; sourceTree = "<group>"; };
 		76A3A2031DFB225F00CE8D6E /* WeatherHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHeaderView.swift; sourceTree = "<group>"; };
 		CD8FAADF10218537F7993666 /* Pods-UmbrellaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UmbrellaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UmbrellaTests/Pods-UmbrellaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +203,7 @@
 				7691593E1DFA891E003D02AA /* WeatherCell.swift */,
 				76A3A2011DFB1F7C00CE8D6E /* HeaderColorView.swift */,
 				76A3A2031DFB225F00CE8D6E /* WeatherHeaderView.swift */,
+				769C46FE1DFB7E5000559651 /* SearchBarView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -205,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				7652886D1DFA0F0A001D59E1 /* ViewController.swift */,
+				769C46F81DFB71DB00559651 /* SettingsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -477,6 +485,8 @@
 				765288A51DFA1138001D59E1 /* TimeLabel.swift in Sources */,
 				765288BE1DFA1530001D59E1 /* Constants.swift in Sources */,
 				7691593F1DFA891E003D02AA /* WeatherCell.swift in Sources */,
+				769C46F91DFB71DB00559651 /* SettingsVC.swift in Sources */,
+				769C46FF1DFB7E5000559651 /* SearchBarView.swift in Sources */,
 				7652886E1DFA0F0A001D59E1 /* ViewController.swift in Sources */,
 				765288951DFA10CA001D59E1 /* WeatherRequest.swift in Sources */,
 				765288A81DFA116D001D59E1 /* CurrentTempView.swift in Sources */,
@@ -498,6 +508,7 @@
 				765288961DFA10CA001D59E1 /* WeatherRequest.swift in Sources */,
 				76A3A2051DFB225F00CE8D6E /* WeatherHeaderView.swift in Sources */,
 				769159401DFA891E003D02AA /* WeatherCell.swift in Sources */,
+				769C47001DFB7E5000559651 /* SearchBarView.swift in Sources */,
 				765288A61DFA1138001D59E1 /* TimeLabel.swift in Sources */,
 				765288941DFA10CA001D59E1 /* Weather.swift in Sources */,
 				765288C41DFA2CF9001D59E1 /* SettingsButton.swift in Sources */,
@@ -508,6 +519,7 @@
 				765288B01DFA12C7001D59E1 /* UIColor+Nerdery.swift in Sources */,
 				765288841DFA0F0A001D59E1 /* UmbrellaTests.swift in Sources */,
 				7652889E1DFA1138001D59E1 /* CityLabel.swift in Sources */,
+				769C46FA1DFB71DB00559651 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

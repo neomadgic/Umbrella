@@ -310,11 +310,18 @@
                                     <segment title="Celsius"/>
                                 </segments>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvB-xp-gIj">
+                                <rect key="frame" x="124" y="187" width="167" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                <state key="normal" title="Get Weather"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="0ko-6D-KRN" secondAttribute="trailing" constant="15" id="4R7-8Y-D1I"/>
                             <constraint firstItem="S8h-TF-mHb" firstAttribute="centerX" secondItem="Wkx-eN-96t" secondAttribute="centerX" id="EtC-Sj-Vk1"/>
+                            <constraint firstItem="WvB-xp-gIj" firstAttribute="top" secondItem="S8h-TF-mHb" secondAttribute="bottom" constant="25" id="LAO-eh-LW4"/>
+                            <constraint firstItem="WvB-xp-gIj" firstAttribute="centerX" secondItem="Wkx-eN-96t" secondAttribute="centerX" id="QQp-If-l7Z"/>
                             <constraint firstItem="0ko-6D-KRN" firstAttribute="top" secondItem="dR0-hq-glp" secondAttribute="bottom" constant="45" id="SDs-gZ-MVJ"/>
                             <constraint firstItem="0ko-6D-KRN" firstAttribute="leading" secondItem="Wkx-eN-96t" secondAttribute="leadingMargin" constant="15" id="cdJ-xu-elY"/>
                             <constraint firstItem="S8h-TF-mHb" firstAttribute="top" secondItem="0ko-6D-KRN" secondAttribute="bottom" constant="25" id="dTc-rF-v8c"/>

@@ -45,7 +45,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnq-mc-pvz" customClass="CurrentTemperatureLabel" customModule="Umbrella" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="71.666666666666657" width="414" height="59.999999999999972"/>
+                                        <rect key="frame" x="0.0" y="71" width="414" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="hjh-CJ-09w"/>
                                         </constraints>

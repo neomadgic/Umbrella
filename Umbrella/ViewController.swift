@@ -12,6 +12,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    //var blurBackground: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,17 +27,38 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     @IBAction func onBlurBtnPressed(_ sender: Any) {
         
-        updateBlur()
+        createBlurBackground()
+        
     }
     
     
-    func updateBlur() {
+    func createBlurBackground() {
         
-        UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, true, 1)
-        self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: true)
+        UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, true, 0.0)
+        //UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, false, 0)
+        self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: false)
         let screenshot = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        let screenshotView = UIImageView(image: screenshot)
+        screenshotView.addBlurEffect()
+        self.view.addSubview(screenshotView)
+        
+        
+        
+        
     }
+}
+
+extension UIView {
+    func addBlurEffect() {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.bounds
+        
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        self.addSubview(blurEffectView)
+    }
+    
 }
 
 //MARK: - UICollectionViewDataSource

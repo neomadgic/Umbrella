@@ -13,29 +13,21 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var blurredBGView: UIView!
     
     var blurryBackgroundImage: UIImage!
+    var tapCloseKeyboard: UITapGestureRecognizer?
+    var tapCloseVC: UITapGestureRecognizer?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         createBlurryBackground()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingsVC.dismissKeyboard))
-        createTapToHideKeyboard(tap: tap)
+        createTapToHideKeyboard()
+        createTapToCloseVC()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func dismissKeyboard() {
-        
-        view.endEditing(true)
-    }
-    
-    func createTapToHideKeyboard(tap: UIGestureRecognizer) {
-        
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
     }
     
     func createBlurryBackground() {
@@ -44,16 +36,30 @@ class SettingsVC: UIViewController {
         imageView.addBlurEffect()
         blurredBGView.addSubview(imageView)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func createTapToHideKeyboard() {
+        
+        tapCloseKeyboard = UITapGestureRecognizer(target: self, action: #selector(SettingsVC.dismissKeyboard))
+        tapCloseKeyboard!.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapCloseKeyboard!)
     }
-    */
+    
+    func createTapToCloseVC() {
+        
+        tapCloseVC = UITapGestureRecognizer(target: self, action: #selector(SettingsVC.closeSettingsVC))
+        blurredBGView.addGestureRecognizer(tapCloseVC!)
+    }
+    
+    func dismissKeyboard() {
+        
+        view.endEditing(true)
+    }
+    
+    func closeSettingsVC() {
+        
+        dismiss(animated: true, completion: nil)
+    }    
+    
 
 }
 

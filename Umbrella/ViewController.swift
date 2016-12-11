@@ -25,12 +25,19 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onBlurBtnPressed(_ sender: Any) {
+    @IBAction func onSettingsBtnPressed(_ sender: Any) {
         
-        createScreenShot()
-        performSegue(withIdentifier: "SettingsVC", sender: screenshot)
-        
+                createScreenShot()
+                performSegue(withIdentifier: "SettingsVC", sender: screenshot)
     }
+    
+    
+//    @IBAction func onBlurBtnPressed(_ sender: Any) {
+//        
+//        createScreenShot()
+//        performSegue(withIdentifier: "SettingsVC", sender: screenshot)
+//        
+//    }
     
     func createScreenShot() {
         UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, true, 1)

@@ -45,7 +45,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnq-mc-pvz" customClass="CurrentTemperatureLabel" customModule="Umbrella" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="71" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="71.666666666666657" width="414" height="59.999999999999972"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="hjh-CJ-09w"/>
                                         </constraints>
@@ -60,7 +60,7 @@
                                         </constraints>
                                         <state key="normal" image="settingsCog"/>
                                         <connections>
-                                            <segue destination="LEp-rx-ONS" kind="popoverPresentation" popoverAnchorView="d7s-TU-2Xm" id="zCE-d4-M1J">
+                                            <segue destination="LEp-rx-ONS" kind="popoverPresentation" identifier="SettingsVC" popoverAnchorView="d7s-TU-2Xm" id="bW9-g6-992">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
@@ -266,7 +266,7 @@
         <!--SettingsVC-->
         <scene sceneID="meI-b9-3GV">
             <objects>
-                <viewController id="LEp-rx-ONS" customClass="SettingsVC" customModule="Umbrella" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsVC" id="LEp-rx-ONS" customClass="SettingsVC" customModule="Umbrella" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dR0-hq-glp"/>
                         <viewControllerLayoutGuide type="bottom" id="0ls-kq-j0B"/>
@@ -275,15 +275,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kY2-V3-zML">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ImB-Kh-8Wk">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.87914663459999998" green="0.87914663459999998" blue="0.87914663459999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="bZK-av-KvE" appends="YES" id="ZAi-sM-5C6"/>
-                                </connections>
-                            </imageView>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ko-6D-KRN" customClass="SearchBarView" customModule="Umbrella" customModuleProvider="target">
                                 <rect key="frame" x="35" y="65" width="344" height="44"/>
                                 <subviews>
@@ -335,11 +330,18 @@
                             <constraint firstItem="S8h-TF-mHb" firstAttribute="centerX" secondItem="Wkx-eN-96t" secondAttribute="centerX" id="EtC-Sj-Vk1"/>
                             <constraint firstItem="WvB-xp-gIj" firstAttribute="top" secondItem="S8h-TF-mHb" secondAttribute="bottom" constant="25" id="LAO-eh-LW4"/>
                             <constraint firstItem="WvB-xp-gIj" firstAttribute="centerX" secondItem="Wkx-eN-96t" secondAttribute="centerX" id="QQp-If-l7Z"/>
+                            <constraint firstAttribute="trailing" secondItem="ImB-Kh-8Wk" secondAttribute="trailing" id="RpW-Cq-D02"/>
                             <constraint firstItem="0ko-6D-KRN" firstAttribute="top" secondItem="dR0-hq-glp" secondAttribute="bottom" constant="45" id="SDs-gZ-MVJ"/>
+                            <constraint firstItem="0ls-kq-j0B" firstAttribute="top" secondItem="ImB-Kh-8Wk" secondAttribute="bottom" id="Tji-eT-uBI"/>
                             <constraint firstItem="0ko-6D-KRN" firstAttribute="leading" secondItem="Wkx-eN-96t" secondAttribute="leadingMargin" constant="15" id="cdJ-xu-elY"/>
                             <constraint firstItem="S8h-TF-mHb" firstAttribute="top" secondItem="0ko-6D-KRN" secondAttribute="bottom" constant="25" id="dTc-rF-v8c"/>
+                            <constraint firstItem="ImB-Kh-8Wk" firstAttribute="top" secondItem="Wkx-eN-96t" secondAttribute="top" id="nqY-HH-5xL"/>
+                            <constraint firstItem="ImB-Kh-8Wk" firstAttribute="leading" secondItem="Wkx-eN-96t" secondAttribute="leading" id="sLB-3R-or3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blurredBGView" destination="ImB-Kh-8Wk" id="JiK-W7-Th1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0FO-5p-3SO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="bZK-av-KvE"/>

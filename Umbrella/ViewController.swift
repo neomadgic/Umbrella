@@ -12,7 +12,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    //var blurBackground: UIView!
+    var screenshot = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,38 +27,31 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     @IBAction func onBlurBtnPressed(_ sender: Any) {
         
-        createBlurBackground()
+        createScreenShot()
+        performSegue(withIdentifier: "SettingsVC", sender: screenshot)
         
     }
     
-    
-    func createBlurBackground() {
-        
-        UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, true, 0.0)
-        //UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, false, 0)
+    func createScreenShot() {
+        UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, true, 1)
         self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: false)
-        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+        screenshot = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-        let screenshotView = UIImageView(image: screenshot)
-        screenshotView.addBlurEffect()
-        self.view.addSubview(screenshotView)
-        
-        
-        
-        
-    }
-}
-
-extension UIView {
-    func addBlurEffect() {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = self.bounds
-        
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
-        self.addSubview(blurEffectView)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "SettingsVC" {
+            
+            if let detailVC = segue.destination as? SettingsVC {
+                
+                if let blurredImage = sender as? UIImage {
+                    
+                    detailVC.blurryBackgroundImage = blurredImage
+                }
+            }
+        }
+    }
 }
 
 //MARK: - UICollectionViewDataSource

@@ -79,6 +79,10 @@ class Weather {
         return _conditionImageURL
     }
     
+    init() {
+        
+    }
+    
     init(zipCode: String) {
         
         self._zipCode = zipCode

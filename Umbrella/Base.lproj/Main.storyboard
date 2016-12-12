@@ -340,6 +340,7 @@
                     <connections>
                         <outlet property="blurredBGView" destination="ImB-Kh-8Wk" id="JiK-W7-Th1"/>
                         <outlet property="searchBarField" destination="SC7-XX-yeG" id="mav-yp-J5W"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ViewController" id="QaR-ps-bI9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0FO-5p-3SO" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -30,7 +30,7 @@ class SettingsVC: UIViewController {
     @IBAction func onGetWeatherBtnPressed(_ sender: Any) {
         
         if isSearchBarValid() {
-            print("yay")
+            performSegue(withIdentifier: "ViewController", sender: searchBarField.text)
         }
     }
     
@@ -80,6 +80,20 @@ class SettingsVC: UIViewController {
         else {
             print("enter something foo")
             return false
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ViewController" {
+            
+            if let vc = segue.destination as? ViewController {
+                
+                if let zipCode = sender as? String {
+                    
+                    vc.zipcode = zipCode
+                }
+            }
         }
     }
     

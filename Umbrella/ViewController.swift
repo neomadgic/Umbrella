@@ -18,40 +18,45 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     
     
-    
+    var zipcode: String?
     var screenshot = UIImage()
-    var testWeather = Weather(zipCode: "78653")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        testWeather.downloadWeatherDetails {
-            () -> () in
-            self.updateLabels()
-        }
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        if zipcode != nil {
+            
+            downloadWeather(zip: zipcode!)
+        }
+
     }
     
     @IBAction func onSettingsBtnPressed(_ sender: Any) {
         
-                createScreenShot()
-                performSegue(withIdentifier: "SettingsVC", sender: screenshot)
+        createScreenShot()
+        performSegue(withIdentifier: "SettingsVC", sender: screenshot)
     }
     
-    func updateLabels() {
+    func downloadWeather(zip: String) {
         
-        cityLabel.text = testWeather.city
-        currentTemperatureLbl.text = "\(testWeather.currentTempF)"
+        let weather = Weather(zipCode: zip)
+        //weather = newWeather
+        weather.downloadWeatherDetails {
+            () -> () in
+            self.updateLabels(weather: weather)
+        }
+    }
+    
+    func updateLabels(weather: Weather) {
+        
+        cityLabel.text = weather.city
+        currentTemperatureLbl.text = "\(weather.currentTempF)"
         currentTemperatureLbl.roundTemperature()
         currentTemperatureLbl.addDegreeSign()
-        currentTempView.changeToCoolColor(currentTemp: testWeather.currentTempF)
-        currentConditionLbl.text = testWeather.currentCondition
+        currentTempView.changeToCoolColor(currentTemp: weather.currentTempF)
+        currentConditionLbl.text = weather.currentCondition
     }
     
     func createScreenShot() {

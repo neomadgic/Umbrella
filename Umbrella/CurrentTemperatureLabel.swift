@@ -12,15 +12,15 @@ class CurrentTemperatureLabel: UILabel {
 
     override func awakeFromNib() {
 
-        roundTemperature()
-        addDegreeSign()
+//        roundTemperature()
+//        addDegreeSign()
     }
     
     func roundTemperature(){
         
         var roundedTemperature: Double?
 
-        if text != "" {
+        if text != nil || text != "" {
             roundedTemperature = Double(text!)!
             roundedTemperature = round(roundedTemperature!)
             text = "\(Int(roundedTemperature!))"

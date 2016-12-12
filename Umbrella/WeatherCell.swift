@@ -22,10 +22,10 @@ class WeatherCell: UICollectionViewCell {
         
         timeLbl.text = hourlyWeather.time
         if isTempF == true {
-            tempLbl.text = hourlyWeather.temperatureF
+            tempLbl.text = "\(hourlyWeather.temperatureF)"
         }
         else {
-            tempLbl.text = hourlyWeather.temperatureC
+            tempLbl.text = "\(hourlyWeather.temperatureC)"
         }
         tempLbl.roundTemperature()
         tempLbl.addDegreeSign()

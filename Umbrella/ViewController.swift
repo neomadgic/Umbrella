@@ -21,11 +21,37 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     var zipcode: String?
     var screenshot = UIImage()
     var isTempF = true
-    
+    var weather = Weather()
+    var nestedArray = [[HourlyWeather]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
+        
+        let fakeHour = HourlyWeather(time: "5AM", tempF: 6, tempC: 3, icon: "cooL")
+        let fakeHour2 = HourlyWeather(time: "3AM", tempF: 4, tempC: 3, icon: "whatever")
+        var firstArray = [HourlyWeather]()
+        var secondArray = [HourlyWeather]()
+        
+//        firstArray.append(fakeHour)
+//        firstArray.append(fakeHour)
+//        firstArray.append(fakeHour)
+//        firstArray.append(fakeHour)
+//        firstArray.append(fakeHour)
+//        
+//        secondArray.append(fakeHour2)
+//        secondArray.append(fakeHour2)
+//        secondArray.append(fakeHour2)
+//        
+//        nestedArray.append(firstArray)
+//        nestedArray.append(secondArray)
+//        
+//        print(nestedArray[0][0].time)
+//        print(nestedArray[0][1].time)
+//        print(nestedArray[1][0].time)
+//        print(nestedArray[1][1].time)
+//        print(nestedArray[0].count)
+        
 
     }
     
@@ -37,15 +63,15 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     func downloadWeather(zip: String) {
         
-        let weather = Weather(zipCode: zip)
-        //weather = newWeather
+        let newWeather = Weather(zipCode: zip)
+        weather = newWeather
         weather.downloadWeatherDetails {
             () -> () in
-            self.updateLabels(weather: weather)
+            self.updateLabels()
         }
     }
     
-    func updateLabels(weather: Weather) {
+    func updateLabels() {
         
         cityLabel.text = weather.city
         if isTempF == true {
@@ -58,6 +84,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         currentTemperatureLbl.addDegreeSign()
         currentTempView.changeToCoolColor(currentTemp: weather.currentTempF)
         currentConditionLbl.text = weather.currentCondition
+        collectionView.reloadData()
     }
     
     func createScreenShot() {
@@ -90,13 +117,20 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return weather.hourlyTodayArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
-        cell.backgroundColor = UIColor.black
-        return cell
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as? WeatherCell {
+            
+            let hourlyWeather = weather.hourlyTodayArray[indexPath.row]
+            cell.configureCell(hourlyWeather: hourlyWeather, isTempF: isTempF)
+            return cell
+        }
+        else {
+            return WeatherCell()
+        }
+
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

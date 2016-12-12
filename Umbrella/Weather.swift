@@ -21,6 +21,7 @@ class Weather {
     private var _currentCondition: String?
     private var _hourlyTodayArray = [HourlyWeather]()
     private var _hourlyTomorrowArray = [HourlyWeather]()
+    private var _hourlyCombinedArray = [[HourlyWeather]]()
     private var _conditionImageURL: String?
     private var _weatherURL: String!
     var weatherURL = WeatherRequest(APIKey: "189b51bbd050fc21")
@@ -71,6 +72,10 @@ class Weather {
     var hourlyTomorrowArray: [HourlyWeather] {
         
         return _hourlyTomorrowArray
+    }
+    
+    var hourlyCombinedArray: [[HourlyWeather]] {
+        return _hourlyCombinedArray
     }
     
     
@@ -162,6 +167,9 @@ class Weather {
                     print("Hourly Report 1 | Time: \(self.hourlyTomorrowArray[0].time) | Temp: \(self.hourlyTodayArray[0].temperatureF)")
                     print("Hourly Report 7 | Time: \(self.hourlyTomorrowArray[7].time) | Temp: \(self.hourlyTodayArray[7].temperatureF)")
                     print(self.hourlyTomorrowArray.count)
+                        
+                        self._hourlyCombinedArray.append(self.hourlyTodayArray)
+                        self._hourlyCombinedArray.append(self.hourlyTomorrowArray)
                         
                     }
                     

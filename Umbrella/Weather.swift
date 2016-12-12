@@ -19,8 +19,8 @@ class Weather {
     private var _currentTempF: Double?
     private var _currentTempC: Double?
     private var _currentCondition: String?
-    private var _timeArray = [String]()
-    private var _forecastTempatureArray = [Int]()
+    private var _hourlyTodayArray = [HourlyWeather]()
+    private var _hourlyTomorrowArray = [HourlyWeather]()
     private var _conditionImageURL: String?
     private var _weatherURL: String!
     var weatherURL = WeatherRequest(APIKey: "189b51bbd050fc21")
@@ -42,7 +42,7 @@ class Weather {
     var currentTempF: Double {
         
         if _currentTempF == nil {
-            _currentTempF = 1337
+            _currentTempF = 0
         }
         return _currentTempF!
     }
@@ -50,7 +50,7 @@ class Weather {
     var currentTempC: Double {
         
         if _currentTempC == nil {
-            _currentTempC = 1337
+            _currentTempC = 0
         }
         return _currentTempC!
     }
@@ -63,13 +63,16 @@ class Weather {
         return _currentCondition!
     }
     
-    var timeArray: [String] {
-        return _timeArray
+    var hourlyTodayArray: [HourlyWeather] {
+        
+        return _hourlyTodayArray
     }
     
-    var forecastTemperatureArray: [Int] {
-        return _forecastTempatureArray
+    var hourlyTomorrowArray: [HourlyWeather] {
+        
+        return _hourlyTomorrowArray
     }
+    
     
     var conditionURL: String? {
         
@@ -104,7 +107,64 @@ class Weather {
                     self._currentTempF = json["current_observation"]["temp_f"].doubleValue
                     self._currentTempC = json["current_observation"]["temp_c"].doubleValue
                     self._currentCondition = json["current_observation"]["weather"].stringValue
-
+                    
+                    var currentDay = json["hourly_forecast"][0]["FCTTIME"]["mday"].intValue
+                    print(currentDay)
+                    var dayArray = [Int]()
+                    var dayEnds = 0
+                    var sizeOfTodayArray = 0
+                    
+                    //find when a new day starts
+                    for x in 0...24 {
+                        currentDay = json["hourly_forecast"][x]["FCTTIME"]["mday"].intValue
+                        dayArray.append(currentDay)
+                        if x > 0 {
+                            if dayArray[x] != dayArray[x-1] {
+                                dayEnds = x
+                            }
+                        }
+                    }
+                    
+                    print(dayEnds)
+                    print(dayArray)
+                    
+                    //Set size of Today's array
+                    if dayEnds - 1 < 7 {
+                        sizeOfTodayArray = dayEnds - 2
+                    }
+                    else {
+                        sizeOfTodayArray = 7
+                    }
+                    
+                    //Create HourlyTodayArray
+                    if dayEnds != 0 {
+                        
+                        for y in 0...sizeOfTodayArray {
+                            let timeStr = json["hourly_forecast"][y]["FCTTIME"]["civil"].stringValue
+                            let tempF = json["hourly_forecast"][y]["temp"]["english"].doubleValue
+                            let tempC = json["hourly_forecast"][y]["temp"]["metric"].doubleValue
+                            let icon = json["hourly_forecast"][y]["icon"].stringValue
+                            let hourlyWeather = HourlyWeather(time: timeStr, tempF: tempF, tempC: tempC, icon: icon)
+                        
+                            self._hourlyTodayArray.append(hourlyWeather)
+                        }
+                    
+                        //Create hourlyTomorrowArray
+                        for z in dayEnds...(dayEnds + 7) {
+                            let timeStr = json["hourly_forecast"][z]["FCTTIME"]["civil"].stringValue
+                            let tempF = json["hourly_forecast"][z]["temp"]["english"].doubleValue
+                            let tempC = json["hourly_forecast"][z]["temp"]["metric"].doubleValue
+                            let icon = json["hourly_forecast"][z]["icon"].stringValue
+                            let hourlyWeather = HourlyWeather(time: timeStr, tempF: tempF, tempC: tempC, icon: icon)
+                        
+                            self._hourlyTomorrowArray.append(hourlyWeather)
+                        }
+                    print("Hourly Report 1 | Time: \(self.hourlyTomorrowArray[0].time) | Temp: \(self.hourlyTodayArray[0].temperatureF)")
+                    print("Hourly Report 7 | Time: \(self.hourlyTomorrowArray[7].time) | Temp: \(self.hourlyTodayArray[7].temperatureF)")
+                    print(self.hourlyTomorrowArray.count)
+                        
+                    }
+                    
                     completed()
                 case .failure(let error):
                     print(error)

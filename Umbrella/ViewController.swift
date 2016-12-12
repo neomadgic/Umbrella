@@ -20,6 +20,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     var zipcode: String?
     var screenshot = UIImage()
+    var isTempF = true
     
     
     override func viewDidLoad() {
@@ -47,7 +48,12 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     func updateLabels(weather: Weather) {
         
         cityLabel.text = weather.city
-        currentTemperatureLbl.text = "\(weather.currentTempF)"
+        if isTempF == true {
+            currentTemperatureLbl.text = "\(weather.currentTempF)"
+        }
+        else {
+            currentTemperatureLbl.text = "\(weather.currentTempC)"
+        }
         currentTemperatureLbl.roundTemperature()
         currentTemperatureLbl.addDegreeSign()
         currentTempView.changeToCoolColor(currentTemp: weather.currentTempF)

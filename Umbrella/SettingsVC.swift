@@ -35,7 +35,7 @@ class SettingsVC: UIViewController {
         
         if isSearchBarValid() {
             if temperatureSegControl.isEnabledForSegment(at: 1) == true {
-                
+                isTempF = false
             }
             performSegue(withIdentifier: "ViewController", sender: searchBarField.text)
         }
@@ -99,6 +99,7 @@ class SettingsVC: UIViewController {
                 if let zipCode = sender as? String {
                     
                     vc.zipcode = zipCode
+                    vc.isTempF = self.isTempF
                     vc.downloadWeather(zip: zipCode)
                 }
             }

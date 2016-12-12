@@ -11,16 +11,26 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var cityLabel: CityLabel!
+    @IBOutlet weak var currentTemperatureLbl: CurrentTemperatureLabel!
+    @IBOutlet weak var currentConditionLbl: UILabel!
+    @IBOutlet weak var currentTempView: CurrentTempView!
+    
+    
+    
     
     var screenshot = UIImage()
+    var testWeather = Weather(zipCode: "78653")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         
-        let testWeather = Weather(zipCode: "55379")
-        testWeather.downloadWeatherDetails()
+        testWeather.downloadWeatherDetails {
+            () -> () in
+            self.updateLabels()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,13 +44,15 @@ class ViewController: UIViewController, UICollectionViewDelegate {
                 performSegue(withIdentifier: "SettingsVC", sender: screenshot)
     }
     
-    
-//    @IBAction func onBlurBtnPressed(_ sender: Any) {
-//        
-//        createScreenShot()
-//        performSegue(withIdentifier: "SettingsVC", sender: screenshot)
-//        
-//    }
+    func updateLabels() {
+        
+        cityLabel.text = testWeather.city
+        currentTemperatureLbl.text = "\(testWeather.currentTempF)"
+        currentTemperatureLbl.roundTemperature()
+        currentTemperatureLbl.addDegreeSign()
+        currentTempView.changeToCoolColor(currentTemp: testWeather.currentTempF)
+        currentConditionLbl.text = testWeather.currentCondition
+    }
     
     func createScreenShot() {
         UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, true, 1)

@@ -244,7 +244,11 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="cityLabel" destination="dfv-VR-jIT" id="ZII-zH-BFD"/>
                         <outlet property="collectionView" destination="2H5-1B-yyo" id="St3-mv-rcD"/>
+                        <outlet property="currentConditionLbl" destination="Rcf-m8-c96" id="eG9-ZA-o5f"/>
+                        <outlet property="currentTempView" destination="SC2-KQ-Cgq" id="boK-h5-cSr"/>
+                        <outlet property="currentTemperatureLbl" destination="xnq-mc-pvz" id="8su-ww-jMc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

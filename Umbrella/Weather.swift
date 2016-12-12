@@ -89,7 +89,7 @@ class Weather {
         
     }
     
-    func downloadWeatherDetails() {
+    func downloadWeatherDetails(completed: @escaping DownloadComplete) {
         
         Alamofire.request(self._weatherURL).responseJSON { response in switch response.result {
                 case .success(let value):
@@ -99,8 +99,9 @@ class Weather {
                     self._city = json["current_observation"]["display_location"]["full"].stringValue
                     self._currentTempF = json["current_observation"]["temp_f"].doubleValue
                     self._currentTempC = json["current_observation"]["temp_c"].doubleValue
-                    
-                    print("City: \(self.city)")
+                    self._currentCondition = json["current_observation"]["weather"].stringValue
+
+                    completed()
                 case .failure(let error):
                     print(error)
             }

@@ -9,7 +9,6 @@ target 'Umbrella' do
 
   target 'UmbrellaTests' do
 	pod 'Alamofire', '~> 4.0'
-    	inherit! :search_paths
    	 # Pods for testing
   end
 

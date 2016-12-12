@@ -10,4 +10,27 @@ import UIKit
 
 class WeatherCell: UICollectionViewCell {
     
+    @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var tempLbl: CurrentTemperatureLabel!
+    @IBOutlet weak var iconImage: UIImageView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    func configureCell(hourlyWeather: HourlyWeather, isTempF: Bool){
+        
+        timeLbl.text = hourlyWeather.time
+        if isTempF == true {
+            tempLbl.text = hourlyWeather.temperatureF
+        }
+        else {
+            tempLbl.text = hourlyWeather.temperatureC
+        }
+        tempLbl.roundTemperature()
+        tempLbl.addDegreeSign()
+        
+    }
+    
+    
 }

@@ -156,7 +156,41 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="62" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5lR-Po-8ek">
+                                                    <rect key="frame" x="17" y="17" width="28" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="Ti8-0x-OCc"/>
+                                                        <constraint firstAttribute="width" constant="28" id="v8o-j7-ABt"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="    " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6g5-2h-amI" customClass="CurrentTemperatureLabel" customModule="Umbrella" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="48" width="62" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="   " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsn-AZ-Ygr">
+                                                    <rect key="frame" x="4" y="0.0" width="54" height="13"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="6g5-2h-amI" firstAttribute="centerX" secondItem="SBp-6g-DSB" secondAttribute="centerX" id="88b-da-Gjc"/>
+                                            <constraint firstItem="6g5-2h-amI" firstAttribute="top" secondItem="5lR-Po-8ek" secondAttribute="bottom" constant="2" id="9Gr-Iu-SFw"/>
+                                            <constraint firstItem="5lR-Po-8ek" firstAttribute="centerX" secondItem="SBp-6g-DSB" secondAttribute="centerX" id="OGc-js-WRK"/>
+                                            <constraint firstItem="5lR-Po-8ek" firstAttribute="top" secondItem="Hsn-AZ-Ygr" secondAttribute="bottom" constant="2" id="ZUP-xM-oTU"/>
+                                            <constraint firstItem="Hsn-AZ-Ygr" firstAttribute="centerX" secondItem="SBp-6g-DSB" secondAttribute="centerX" id="eBh-2q-yHR"/>
+                                            <constraint firstItem="5lR-Po-8ek" firstAttribute="centerY" secondItem="SBp-6g-DSB" secondAttribute="centerY" id="vFH-fT-KWB"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="iconImage" destination="5lR-Po-8ek" id="v0c-9N-o0g"/>
+                                            <outlet property="tempLbl" destination="6g5-2h-amI" id="xue-M3-zjX"/>
+                                            <outlet property="timeLbl" destination="Hsn-AZ-Ygr" id="Cc7-uc-hpu"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherHeaderView" id="I7m-wK-O4p" customClass="WeatherHeaderView" customModule="Umbrella" customModuleProvider="target">

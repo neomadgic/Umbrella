@@ -11,6 +11,8 @@ import UIKit
 class SettingsVC: UIViewController {
     
     @IBOutlet weak var blurredBGView: UIView!
+    @IBOutlet weak var searchBarField: UITextField!
+    
     
     var blurryBackgroundImage: UIImage!
     var tapCloseKeyboard: UITapGestureRecognizer?
@@ -25,9 +27,11 @@ class SettingsVC: UIViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func onGetWeatherBtnPressed(_ sender: Any) {
+        
+        if isSearchBarValid() {
+            print("yay")
+        }
     }
     
     func createBlurryBackground() {
@@ -58,7 +62,26 @@ class SettingsVC: UIViewController {
     func closeSettingsVC() {
         
         dismiss(animated: true, completion: nil)
-    }    
+    }
+    
+    func isSearchBarValid() -> Bool {
+        
+        if searchBarField.text != nil {
+            
+            let convertedToNumber = Double(searchBarField.text!)
+            if searchBarField.text?.characters.count == 5 && convertedToNumber != nil {
+                return true
+            }
+            else {
+                //Number is not 5 digits or contains non digits
+                return false
+            }
+        }
+        else {
+            print("enter something foo")
+            return false
+        }
+    }
     
 
 }
@@ -72,5 +95,5 @@ extension UIView {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
         self.addSubview(blurEffectView)
     }
-    
 }
+

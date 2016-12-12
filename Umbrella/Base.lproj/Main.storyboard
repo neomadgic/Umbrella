@@ -282,7 +282,7 @@
                                             <constraint firstAttribute="width" secondItem="NHs-89-b3v" secondAttribute="height" multiplier="1:1" id="gHH-oo-evm"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SC7-XX-yeG" customClass="SearchBarTextField" customModule="Umbrella" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SC7-XX-yeG">
                                         <rect key="frame" x="50" y="7" width="284" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -309,11 +309,17 @@
                                     <segment title="Farenheit"/>
                                     <segment title="Celsius"/>
                                 </segments>
+                                <color key="tintColor" red="0.74360012289999999" green="0.90476408220000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvB-xp-gIj">
                                 <rect key="frame" x="124" y="187" width="167" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                <state key="normal" title="Get Weather"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                                <state key="normal" title="Get Weather">
+                                    <color key="titleColor" red="0.74360012288337241" green="0.90476408215383408" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onGetWeatherBtnPressed:" destination="LEp-rx-ONS" eventType="touchUpInside" id="84d-1S-olv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -333,6 +339,7 @@
                     </view>
                     <connections>
                         <outlet property="blurredBGView" destination="ImB-Kh-8Wk" id="JiK-W7-Th1"/>
+                        <outlet property="searchBarField" destination="SC7-XX-yeG" id="mav-yp-J5W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0FO-5p-3SO" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -29,7 +29,7 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CtO-Ml-Mse">
                                         <rect key="frame" x="0.0" y="242" width="240" height="42"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Clear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcf-m8-c96">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="         " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcf-m8-c96">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="25"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,7 +44,7 @@
                                             <constraint firstAttribute="bottom" secondItem="Rcf-m8-c96" secondAttribute="bottom" constant="5" id="qRK-Z7-dK6"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnq-mc-pvz" customClass="CurrentTemperatureLabel" customModule="Umbrella" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnq-mc-pvz" customClass="CurrentTemperatureLabel" customModule="Umbrella" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="71.666666666666657" width="414" height="59.999999999999972"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="hjh-CJ-09w"/>
@@ -66,7 +66,7 @@
                                             </segue>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Minneapolis, MN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfv-VR-jIT" customClass="CityLabel" customModule="Umbrella" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="                       " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfv-VR-jIT" customClass="CityLabel" customModule="Umbrella" customModuleProvider="target">
                                         <rect key="frame" x="127" y="38" width="181" height="25"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -299,7 +299,7 @@
                                     <constraint firstAttribute="trailing" secondItem="SC7-XX-yeG" secondAttribute="trailing" constant="10" id="izC-8A-b69"/>
                                 </constraints>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="S8h-TF-mHb" customClass="TemperatureSegmentedControl" customModule="Umbrella" customModuleProvider="target">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="S8h-TF-mHb">
                                 <rect key="frame" x="95" y="134" width="225" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="225" id="9ZF-NZ-mAw"/>
@@ -340,6 +340,7 @@
                     <connections>
                         <outlet property="blurredBGView" destination="ImB-Kh-8Wk" id="JiK-W7-Th1"/>
                         <outlet property="searchBarField" destination="SC7-XX-yeG" id="mav-yp-J5W"/>
+                        <outlet property="temperatureSegControl" destination="S8h-TF-mHb" id="Fnj-UN-nH0"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="ViewController" id="QaR-ps-bI9"/>
                     </connections>
                 </viewController>

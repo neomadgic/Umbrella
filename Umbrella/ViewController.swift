@@ -26,11 +26,6 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         collectionView.delegate = self
 
-        if zipcode != nil {
-            
-            downloadWeather(zip: zipcode!)
-        }
-
     }
     
     @IBAction func onSettingsBtnPressed(_ sender: Any) {

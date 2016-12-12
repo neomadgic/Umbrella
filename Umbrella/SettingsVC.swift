@@ -12,15 +12,19 @@ class SettingsVC: UIViewController {
     
     @IBOutlet weak var blurredBGView: UIView!
     @IBOutlet weak var searchBarField: UITextField!
+    @IBOutlet weak var temperatureSegControl: UISegmentedControl!
     
     
     var blurryBackgroundImage: UIImage!
     var tapCloseKeyboard: UITapGestureRecognizer?
     var tapCloseVC: UITapGestureRecognizer?
     
+    var isTempF = true
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        isTempF = true
         createBlurryBackground()
         createTapToHideKeyboard()
         createTapToCloseVC()
@@ -30,6 +34,9 @@ class SettingsVC: UIViewController {
     @IBAction func onGetWeatherBtnPressed(_ sender: Any) {
         
         if isSearchBarValid() {
+            if temperatureSegControl.isEnabledForSegment(at: 1) == true {
+                
+            }
             performSegue(withIdentifier: "ViewController", sender: searchBarField.text)
         }
     }
@@ -92,6 +99,7 @@ class SettingsVC: UIViewController {
                 if let zipCode = sender as? String {
                     
                     vc.zipcode = zipCode
+                    vc.downloadWeather(zip: zipCode)
                 }
             }
         }

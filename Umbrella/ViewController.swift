@@ -27,31 +27,6 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
-        
-        let fakeHour = HourlyWeather(time: "5AM", tempF: 6, tempC: 3, icon: "cooL")
-        let fakeHour2 = HourlyWeather(time: "3AM", tempF: 4, tempC: 3, icon: "whatever")
-        var firstArray = [HourlyWeather]()
-        var secondArray = [HourlyWeather]()
-        
-//        firstArray.append(fakeHour)
-//        firstArray.append(fakeHour)
-//        firstArray.append(fakeHour)
-//        firstArray.append(fakeHour)
-//        firstArray.append(fakeHour)
-//        
-//        secondArray.append(fakeHour2)
-//        secondArray.append(fakeHour2)
-//        secondArray.append(fakeHour2)
-//        
-//        nestedArray.append(firstArray)
-//        nestedArray.append(secondArray)
-//        
-//        print(nestedArray[0][0].time)
-//        print(nestedArray[0][1].time)
-//        print(nestedArray[1][0].time)
-//        print(nestedArray[1][1].time)
-//        print(nestedArray[0].count)
-        
 
     }
     
@@ -113,17 +88,18 @@ class ViewController: UIViewController, UICollectionViewDelegate {
 extension ViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return weather.hourlyCombinedArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return weather.hourlyTodayArray.count
+        //return weather.hourlyTodayArray.count
+        return weather.hourlyCombinedArray[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as? WeatherCell {
             
-            let hourlyWeather = weather.hourlyTodayArray[indexPath.row]
+            let hourlyWeather = weather.hourlyCombinedArray[indexPath.section][indexPath.row]
             cell.configureCell(hourlyWeather: hourlyWeather, isTempF: isTempF)
             return cell
         }
@@ -142,7 +118,12 @@ extension ViewController: UICollectionViewDataSource {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                              withReuseIdentifier: "WeatherHeaderView",
                                                                              for: indexPath) as! WeatherHeaderView
-            headerView.DayHeaderLbl.text = "Today"
+            if indexPath.section == 0 {
+                headerView.DayHeaderLbl.text = "Today"
+            }
+            if indexPath.section == 1 {
+                headerView.DayHeaderLbl.text = "Tomorrow"
+            }
             return headerView
         default:
             //4

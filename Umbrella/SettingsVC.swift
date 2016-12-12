@@ -34,7 +34,7 @@ class SettingsVC: UIViewController {
     @IBAction func onGetWeatherBtnPressed(_ sender: Any) {
         
         if isSearchBarValid() {
-            if temperatureSegControl.isEnabledForSegment(at: 1) == true {
+            if temperatureSegControl.selectedSegmentIndex == 1 {
                 isTempF = false
             }
             performSegue(withIdentifier: "ViewController", sender: searchBarField.text)

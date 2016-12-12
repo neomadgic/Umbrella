@@ -164,10 +164,8 @@ class Weather {
                         
                             self._hourlyTomorrowArray.append(hourlyWeather)
                         }
-                    print("Hourly Report 1 | Time: \(self.hourlyTomorrowArray[0].time) | Temp: \(self.hourlyTodayArray[0].temperatureF)")
-                    print("Hourly Report 7 | Time: \(self.hourlyTomorrowArray[7].time) | Temp: \(self.hourlyTodayArray[7].temperatureF)")
-                    print(self.hourlyTomorrowArray.count)
-                        
+
+                        //Add them to hourlyCombinedArray
                         self._hourlyCombinedArray.append(self.hourlyTodayArray)
                         self._hourlyCombinedArray.append(self.hourlyTomorrowArray)
                         

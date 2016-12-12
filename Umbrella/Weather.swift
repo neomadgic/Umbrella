@@ -8,18 +8,26 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
+
 
 class Weather {
     
-    private var _zipCode: Int!
+    private var _zipCode: String!
     private var _city: String?
-    private var _currentTemp: Int?
+    private var _currentTempF: Double?
+    private var _currentTempC: Double?
     private var _currentCondition: String?
     private var _timeArray = [String]()
     private var _forecastTempatureArray = [Int]()
     private var _conditionImageURL: String?
+    private var _weatherURL: String!
+    var weatherURL = WeatherRequest(APIKey: "189b51bbd050fc21")
+    let URL_BASE = "http://api.wunderground.com"
+    let URL_WEATHER = "/api/189b51bbd050fc21/conditions/hourly/q/"
     
-    var zipCode: Int {
+    var zipCode: String {
         return _zipCode
     }
     
@@ -31,12 +39,20 @@ class Weather {
         return _city!
     }
     
-    var currentTemp: Int {
+    var currentTempF: Double {
         
-        if _currentTemp == nil {
-            _currentTemp = 0
+        if _currentTempF == nil {
+            _currentTempF = 1337
         }
-        return _currentTemp!
+        return _currentTempF!
+    }
+    
+    var currentTempC: Double {
+        
+        if _currentTempC == nil {
+            _currentTempC = 1337
+        }
+        return _currentTempC!
     }
     
     var currentCondition: String {
@@ -63,9 +79,32 @@ class Weather {
         return _conditionImageURL
     }
     
-    init(zipCode: Int) {
+    init(zipCode: String) {
         
         self._zipCode = zipCode
+        
+        weatherURL.zipCode = zipCode
+        
+        _weatherURL = "\(URL_BASE)\(URL_WEATHER)\(zipCode).json"
+        
+    }
+    
+    func downloadWeatherDetails() {
+        
+        Alamofire.request(self._weatherURL).responseJSON { response in switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    print("JSON: \(json)")
+                    
+                    self._city = json["current_observation"]["display_location"]["full"].stringValue
+                    self._currentTempF = json["current_observation"]["temp_f"].doubleValue
+                    self._currentTempC = json["current_observation"]["temp_c"].doubleValue
+                    
+                    print("City: \(self.city)")
+                case .failure(let error):
+                    print(error)
+            }
+        }
     }
     
 }

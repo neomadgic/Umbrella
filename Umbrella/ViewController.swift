@@ -18,6 +18,9 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         collectionView.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let testWeather = Weather(zipCode: "55379")
+        testWeather.downloadWeatherDetails()
     }
 
     override func didReceiveMemoryWarning() {

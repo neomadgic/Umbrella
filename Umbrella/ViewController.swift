@@ -27,7 +27,8 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
-        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(ViewController.didBecomeActive), name: NSNotification.Name.UIApplicationWillEnterForeground, object: UIApplication.shared)
         
     }
     
@@ -68,6 +69,12 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: false)
         screenshot = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
+    }
+    
+    func didBecomeActive() {
+        
+        createScreenShot()
+        performSegue(withIdentifier: "SettingsVC", sender: screenshot)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

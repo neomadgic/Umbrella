@@ -23,12 +23,21 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     var isTempF = true
     var weather = Weather()
     var nestedArray = [[HourlyWeather]]()
+    var isFirstOpen = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(ViewController.didBecomeActive), name: NSNotification.Name.UIApplicationWillEnterForeground, object: UIApplication.shared)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if isFirstOpen == true {
+            didBecomeActive()
+            isFirstOpen = false
+        }
         
     }
     
@@ -100,7 +109,7 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //return weather.hourlyTodayArray.count
+
         return weather.hourlyCombinedArray[section].count
     }
     
@@ -120,9 +129,9 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         switch kind {
-        //2
+        
         case UICollectionElementKindSectionHeader:
-            //3
+           
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                              withReuseIdentifier: "WeatherHeaderView",
                                                                              for: indexPath) as! WeatherHeaderView
@@ -134,7 +143,7 @@ extension ViewController: UICollectionViewDataSource {
             }
             return headerView
         default:
-            //4
+           
             assert(false, "Unexpected element kind")
         }
     }

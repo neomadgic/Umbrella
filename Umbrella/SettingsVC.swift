@@ -100,6 +100,7 @@ class SettingsVC: UIViewController {
                     
                     vc.zipcode = zipCode
                     vc.isTempF = self.isTempF
+                    vc.isFirstOpen = false
                     vc.downloadWeather(zip: zipCode)
                 }
             }

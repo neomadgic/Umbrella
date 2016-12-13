@@ -113,6 +113,8 @@ class Weather {
                     self._currentTempC = json["current_observation"]["temp_c"].doubleValue
                     self._currentCondition = json["current_observation"]["weather"].stringValue
                     
+                    //Creating variables to find the date for today and tomorrow
+                    //also created them to find min and max temps
                     var currentDay = json["hourly_forecast"][0]["FCTTIME"]["mday"].intValue
                     var dayArray = [Int]()
                     var dayEnds = 0

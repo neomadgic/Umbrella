@@ -12,8 +12,6 @@ class CurrentTemperatureLabel: UILabel {
 
     override func awakeFromNib() {
 
-//        roundTemperature()
-//        addDegreeSign()
     }
     
     func roundTemperature(){

@@ -114,7 +114,6 @@ class Weather {
                     self._currentCondition = json["current_observation"]["weather"].stringValue
                     
                     var currentDay = json["hourly_forecast"][0]["FCTTIME"]["mday"].intValue
-                    print(currentDay)
                     var dayArray = [Int]()
                     var dayEnds = 0
                     var sizeOfTodayArray = 0
@@ -132,8 +131,6 @@ class Weather {
                         }
                     }
                     
-                    print(dayEnds)
-                    print(dayArray)
                     
                     //Set size of Today's array
                     if dayEnds - 1 < 7 {
@@ -201,7 +198,6 @@ class Weather {
                             self._hourlyTomorrowArray[locationMaxTomorrow].isHigh = true
                         }
                         
-                        print("min: \(minToday) and location: \(locationMinToday) istrue?: \(self.hourlyTodayArray[locationMinToday].isLow)")
 
                         //Add them to hourlyCombinedArray
                         self._hourlyCombinedArray.append(self.hourlyTodayArray)

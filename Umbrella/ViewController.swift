@@ -27,7 +27,8 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
-
+        
+        
     }
     
     @IBAction func onSettingsBtnPressed(_ sender: Any) {

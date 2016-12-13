@@ -11,10 +11,7 @@ import UIKit
 class TemperatureSegmentedControl: UISegmentedControl {
 
     override func awakeFromNib() {
-        sizeToFit()
-        center = center
-        
-        
+
     }
 
 }

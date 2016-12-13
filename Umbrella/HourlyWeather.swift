@@ -15,6 +15,9 @@ class HourlyWeather {
     private var _temperatureC: Double?
     private var _icon: String?
     
+    var isHigh = false
+    var isLow = false
+    
     var time: String {
         
         if _time == nil {

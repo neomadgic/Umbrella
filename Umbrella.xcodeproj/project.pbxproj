@@ -823,6 +823,7 @@
 				DEVELOPMENT_TEAM = JYPLTFPFXY;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Umbrella/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.neomadgic.Umbrella;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -839,6 +840,7 @@
 				DEVELOPMENT_TEAM = JYPLTFPFXY;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Umbrella/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.neomadgic.Umbrella;
 				PRODUCT_NAME = "$(TARGET_NAME)";

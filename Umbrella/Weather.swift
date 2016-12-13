@@ -79,12 +79,12 @@ class Weather {
     }
     
     
-    var conditionURL: String? {
+    var conditionURL: String {
         
         if _conditionImageURL == nil {
             _conditionImageURL = ""
         }
-        return _conditionImageURL
+        return _conditionImageURL!
     }
     
     init() {
@@ -118,6 +118,8 @@ class Weather {
                     var dayArray = [Int]()
                     var dayEnds = 0
                     var sizeOfTodayArray = 0
+                    var todayTempArray = [Double]()
+                    var tomorrowTempArray = [Double]()
                     
                     //find when a new day starts
                     for x in 0...24 {
@@ -135,7 +137,7 @@ class Weather {
                     
                     //Set size of Today's array
                     if dayEnds - 1 < 7 {
-                        sizeOfTodayArray = dayEnds - 2
+                        sizeOfTodayArray = dayEnds - 1
                     }
                     else {
                         sizeOfTodayArray = 7
@@ -152,6 +154,7 @@ class Weather {
                             let hourlyWeather = HourlyWeather(time: timeStr, tempF: tempF, tempC: tempC, icon: icon)
                         
                             self._hourlyTodayArray.append(hourlyWeather)
+                            todayTempArray.append(tempF)
                         }
                     
                         //Create hourlyTomorrowArray
@@ -163,12 +166,46 @@ class Weather {
                             let hourlyWeather = HourlyWeather(time: timeStr, tempF: tempF, tempC: tempC, icon: icon)
                         
                             self._hourlyTomorrowArray.append(hourlyWeather)
+                            tomorrowTempArray.append(tempF)
                         }
+                        
+                        //Find Min and Max of todayTempArray
+                        let maxToday = todayTempArray.max()
+                        let minToday = todayTempArray.min()
+                        let locationMaxToday = todayTempArray.index(of: maxToday!)!
+                        let locationMinToday = todayTempArray.index(of: minToday!)!
+                        
+                        todayTempArray.sort()
+                        if todayTempArray[0] != todayTempArray[1] {
+                            self._hourlyTodayArray[locationMinToday].isLow = true
+                        }
+                        
+                        todayTempArray.reverse()
+                        if todayTempArray[0] != todayTempArray[1] {
+                            self._hourlyTodayArray[locationMaxToday].isHigh = true
+                        }
+                        
+                        //Find Min and Max of tomorrowTempArray
+                        let maxTomorrow = tomorrowTempArray.max()
+                        let minTomorrow = tomorrowTempArray.min()
+                        let locationMaxTomorrow = tomorrowTempArray.index(of: maxTomorrow!)!
+                        let locationMinTomorrow = tomorrowTempArray.index(of: minTomorrow!)!
+                        
+                        tomorrowTempArray.sort()
+                        if tomorrowTempArray[0] != tomorrowTempArray[1] {
+                            self._hourlyTomorrowArray[locationMinTomorrow].isLow = true
+                        }
+                        
+                        tomorrowTempArray.reverse()
+                        if tomorrowTempArray[0] != tomorrowTempArray[1] {
+                            self._hourlyTomorrowArray[locationMaxTomorrow].isHigh = true
+                        }
+                        
+                        print("min: \(minToday) and location: \(locationMinToday) istrue?: \(self.hourlyTodayArray[locationMinToday].isLow)")
 
                         //Add them to hourlyCombinedArray
                         self._hourlyCombinedArray.append(self.hourlyTodayArray)
                         self._hourlyCombinedArray.append(self.hourlyTomorrowArray)
-                        
                     }
                     
                     completed()
@@ -179,3 +216,4 @@ class Weather {
     }
     
 }
+

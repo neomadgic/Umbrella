@@ -92,13 +92,18 @@ class ViewController: UIViewController, UICollectionViewDelegate {
             
             if let detailVC = segue.destination as? SettingsVC {
                 
+                detailVC.preferredContentSize = view.bounds.size
+                
                 if let blurredImage = sender as? UIImage {
                     
                     detailVC.blurryBackgroundImage = blurredImage
+                    
                 }
             }
         }
     }
+    
+    
 }
 
 //MARK: - UICollectionViewDataSource

@@ -115,23 +115,10 @@ class Weather {
                     
                     //Creating variables to find the date for today and tomorrow
                     //also created them to find min and max temps
-                    var currentDay = json["hourly_forecast"][0]["FCTTIME"]["mday"].intValue
-                    var dayArray = [Int]()
-                    var dayEnds = 0
+                    let dayEnds = self.findWhenNewDayStarts(json: json)
                     var sizeOfTodayArray = 0
                     var todayTempArray = [Double]()
                     var tomorrowTempArray = [Double]()
-                    
-                    //find when a new day starts
-                    for x in 0...24 {
-                        currentDay = json["hourly_forecast"][x]["FCTTIME"]["mday"].intValue
-                        dayArray.append(currentDay)
-                        if x > 0 {
-                            if dayArray[x] != dayArray[x-1] {
-                                dayEnds = x
-                            }
-                        }
-                    }
                     
                     
                     //Set size of Today's array
@@ -211,6 +198,23 @@ class Weather {
                     print(error)
             }
         }
+    }
+    
+    func findWhenNewDayStarts(json: JSON) -> Int {
+        
+        var dayArray = [Int]()
+        var currentDay: Int
+        for x in 0...24 {
+            currentDay = json["hourly_forecast"][x]["FCTTIME"]["mday"].intValue
+            dayArray.append(currentDay)
+            if x > 0 {
+                if dayArray[x] != dayArray[x-1] {
+                    return x
+                }
+            }
+        }
+        
+        return 0
     }
     
 }

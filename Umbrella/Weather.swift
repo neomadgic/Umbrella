@@ -22,9 +22,7 @@ class Weather {
     private var _hourlyTodayArray = [HourlyWeather]()
     private var _hourlyTomorrowArray = [HourlyWeather]()
     private var _hourlyCombinedArray = [[HourlyWeather]]()
-    private var _conditionImageURL: String?
     private var _weatherURL: String!
-    var weatherURL = WeatherRequest(APIKey: "189b51bbd050fc21")
     let URL_BASE = "http://api.wunderground.com"
     let URL_WEATHER = "/api/189b51bbd050fc21/conditions/hourly/q/"
     
@@ -78,15 +76,6 @@ class Weather {
         return _hourlyCombinedArray
     }
     
-    
-    var conditionURL: String {
-        
-        if _conditionImageURL == nil {
-            _conditionImageURL = ""
-        }
-        return _conditionImageURL!
-    }
-    
     init() {
         
     }
@@ -94,8 +83,6 @@ class Weather {
     init(zipCode: String) {
         
         self._zipCode = zipCode
-        
-        weatherURL.zipCode = zipCode
         
         _weatherURL = "\(URL_BASE)\(URL_WEATHER)\(zipCode).json"
         

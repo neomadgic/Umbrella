@@ -116,18 +116,19 @@ class Weather {
                     //Creating variables to find the date for today and tomorrow
                     //also created them to find min and max temps
                     let dayEnds = self.findWhenNewDayStarts(json: json)
-                    var sizeOfTodayArray = 0
+//                    var sizeOfTodayArray = 0
+                    let sizeOfTodayArray = self.setSizeOfTodayArray(dayEnds: dayEnds)
                     var todayTempArray = [Double]()
                     var tomorrowTempArray = [Double]()
                     
                     
                     //Set size of Today's array
-                    if dayEnds - 1 < 7 {
-                        sizeOfTodayArray = dayEnds - 1
-                    }
-                    else {
-                        sizeOfTodayArray = 7
-                    }
+//                    if dayEnds - 1 < 7 {
+//                        sizeOfTodayArray = dayEnds - 1
+//                    }
+//                    else {
+//                        sizeOfTodayArray = 7
+//                    }
                     
                     //Create HourlyTodayArray
                     if dayEnds != 0 {
@@ -215,6 +216,16 @@ class Weather {
         }
         
         return 0
+    }
+    
+    func setSizeOfTodayArray(dayEnds: Int) -> Int {
+        
+        if dayEnds - 1 < 7 {
+            return dayEnds - 1
+        }
+        else {
+            return 7
+        }
     }
     
 }

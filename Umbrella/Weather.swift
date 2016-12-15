@@ -116,45 +116,18 @@ class Weather {
                     //Creating variables to find the date for today and tomorrow
                     //also created them to find min and max temps
                     let dayEnds = self.findWhenNewDayStarts(json: json)
-//                    var sizeOfTodayArray = 0
                     let sizeOfTodayArray = self.setSizeOfTodayArray(dayEnds: dayEnds)
-                    var todayTempArray = [Double]()
-                    var tomorrowTempArray = [Double]()
-                    
-                    
-                    //Set size of Today's array
-//                    if dayEnds - 1 < 7 {
-//                        sizeOfTodayArray = dayEnds - 1
-//                    }
-//                    else {
-//                        sizeOfTodayArray = 7
-//                    }
-                    
-                    //Create HourlyTodayArray
+//                    var todayTempArray = [Double]()
                     if dayEnds != 0 {
                         
-                        for y in 0...sizeOfTodayArray {
-                            let timeStr = json["hourly_forecast"][y]["FCTTIME"]["civil"].stringValue
-                            let tempF = json["hourly_forecast"][y]["temp"]["english"].doubleValue
-                            let tempC = json["hourly_forecast"][y]["temp"]["metric"].doubleValue
-                            let icon = json["hourly_forecast"][y]["icon"].stringValue
-                            let hourlyWeather = HourlyWeather(time: timeStr, tempF: tempF, tempC: tempC, icon: icon)
                         
-                            self._hourlyTodayArray.append(hourlyWeather)
-                            todayTempArray.append(tempF)
-                        }
-                    
-                        //Create hourlyTomorrowArray
-                        for z in dayEnds...(dayEnds + 7) {
-                            let timeStr = json["hourly_forecast"][z]["FCTTIME"]["civil"].stringValue
-                            let tempF = json["hourly_forecast"][z]["temp"]["english"].doubleValue
-                            let tempC = json["hourly_forecast"][z]["temp"]["metric"].doubleValue
-                            let icon = json["hourly_forecast"][z]["icon"].stringValue
-                            let hourlyWeather = HourlyWeather(time: timeStr, tempF: tempF, tempC: tempC, icon: icon)
+                        self._hourlyTodayArray = self.createHourlyWeatherArray(startDayOfArray: 0, endDayOfArray: sizeOfTodayArray, json: json)
+                        self._hourlyTomorrowArray = self.createHourlyWeatherArray(startDayOfArray: dayEnds, endDayOfArray: dayEnds + 7, json: json)
+                        var todayTempArray = self.createTemperatureArray(hourlyWeatherArray: self.hourlyTodayArray)
+                        var tomorrowTempArray = self.createTemperatureArray(hourlyWeatherArray: self.hourlyTomorrowArray)
                         
-                            self._hourlyTomorrowArray.append(hourlyWeather)
-                            tomorrowTempArray.append(tempF)
-                        }
+//                        var todayTempArray = self.createTemperatureArray(startDayOfArray: 0, endDayOfArray: sizeOfTodayArray, json: json)
+//                        var tomorrowTempArray = self.createTemperatureArray(startDayOfArray: dayEnds, endDayOfArray: dayEnds + 7, json: json)
                         
                         //Find Min and Max of todayTempArray
                         let maxToday = todayTempArray.max()
@@ -162,12 +135,12 @@ class Weather {
                         let locationMaxToday = todayTempArray.index(of: maxToday!)!
                         let locationMinToday = todayTempArray.index(of: minToday!)!
                         
-                        todayTempArray.sort()
+                        todayTempArray.sorted()
                         if todayTempArray[0] != todayTempArray[1] {
                             self._hourlyTodayArray[locationMinToday].isLow = true
                         }
                         
-                        todayTempArray.reverse()
+                        todayTempArray.reversed()
                         if todayTempArray[0] != todayTempArray[1] {
                             self._hourlyTodayArray[locationMaxToday].isHigh = true
                         }
@@ -188,10 +161,78 @@ class Weather {
                             self._hourlyTomorrowArray[locationMaxTomorrow].isHigh = true
                         }
                         
-
+                        
                         //Add them to hourlyCombinedArray
                         self._hourlyCombinedArray.append(self.hourlyTodayArray)
                         self._hourlyCombinedArray.append(self.hourlyTomorrowArray)
+                    }
+
+                    
+                    var tomorrowTempArray = [Double]()
+                    
+                    
+                    //Create HourlyTodayArray
+                    if dayEnds != 0 {
+                        
+//                        for y in 0...sizeOfTodayArray {
+//                            let timeStr = json["hourly_forecast"][y]["FCTTIME"]["civil"].stringValue
+//                            let tempF = json["hourly_forecast"][y]["temp"]["english"].doubleValue
+//                            let tempC = json["hourly_forecast"][y]["temp"]["metric"].doubleValue
+//                            let icon = json["hourly_forecast"][y]["icon"].stringValue
+//                            let hourlyWeather = HourlyWeather(time: timeStr, tempF: tempF, tempC: tempC, icon: icon)
+//                        
+//                            self._hourlyTodayArray.append(hourlyWeather)
+//                            todayTempArray.append(tempF)
+//                        }
+                    
+                        //Create hourlyTomorrowArray
+//                        for z in dayEnds...(dayEnds + 7) {
+//                            let timeStr = json["hourly_forecast"][z]["FCTTIME"]["civil"].stringValue
+//                            let tempF = json["hourly_forecast"][z]["temp"]["english"].doubleValue
+//                            let tempC = json["hourly_forecast"][z]["temp"]["metric"].doubleValue
+//                            let icon = json["hourly_forecast"][z]["icon"].stringValue
+//                            let hourlyWeather = HourlyWeather(time: timeStr, tempF: tempF, tempC: tempC, icon: icon)
+//                        
+//                            self._hourlyTomorrowArray.append(hourlyWeather)
+//                            tomorrowTempArray.append(tempF)
+//                        }
+                        
+                        //Find Min and Max of todayTempArray
+//                        let maxToday = todayTempArray.max()
+//                        let minToday = todayTempArray.min()
+//                        let locationMaxToday = todayTempArray.index(of: maxToday!)!
+//                        let locationMinToday = todayTempArray.index(of: minToday!)!
+//                        
+//                        todayTempArray.sorted()
+//                        if todayTempArray[0] != todayTempArray[1] {
+//                            self._hourlyTodayArray[locationMinToday].isLow = true
+//                        }
+//                        
+//                        todayTempArray.reversed()
+//                        if todayTempArray[0] != todayTempArray[1] {
+//                            self._hourlyTodayArray[locationMaxToday].isHigh = true
+//                        }
+//                        
+//                        //Find Min and Max of tomorrowTempArray
+//                        let maxTomorrow = tomorrowTempArray.max()
+//                        let minTomorrow = tomorrowTempArray.min()
+//                        let locationMaxTomorrow = tomorrowTempArray.index(of: maxTomorrow!)!
+//                        let locationMinTomorrow = tomorrowTempArray.index(of: minTomorrow!)!
+//                        
+//                        tomorrowTempArray.sort()
+//                        if tomorrowTempArray[0] != tomorrowTempArray[1] {
+//                            self._hourlyTomorrowArray[locationMinTomorrow].isLow = true
+//                        }
+//                        
+//                        tomorrowTempArray.reverse()
+//                        if tomorrowTempArray[0] != tomorrowTempArray[1] {
+//                            self._hourlyTomorrowArray[locationMaxTomorrow].isHigh = true
+//                        }
+//                        
+//
+//                        //Add them to hourlyCombinedArray
+//                        self._hourlyCombinedArray.append(self.hourlyTodayArray)
+//                        self._hourlyCombinedArray.append(self.hourlyTomorrowArray)
                     }
                     
                     completed()
@@ -228,5 +269,34 @@ class Weather {
         }
     }
     
+    func createHourlyWeatherArray(startDayOfArray: Int, endDayOfArray: Int, json: JSON) -> [HourlyWeather] {
+        
+        var tempArray = [HourlyWeather]()
+    
+        for y in startDayOfArray...endDayOfArray {
+                let timeStr = json["hourly_forecast"][y]["FCTTIME"]["civil"].stringValue
+                let tempF = json["hourly_forecast"][y]["temp"]["english"].doubleValue
+                let tempC = json["hourly_forecast"][y]["temp"]["metric"].doubleValue
+                let icon = json["hourly_forecast"][y]["icon"].stringValue
+                let hourlyWeather = HourlyWeather(time: timeStr, tempF: tempF, tempC: tempC, icon: icon)
+            
+                tempArray.append(hourlyWeather)
+        }
+        
+        return tempArray
+    }
+    
+    func createTemperatureArray(hourlyWeatherArray: [HourlyWeather]) -> [Double] {
+        
+        var tempArray = [Double]()
+        
+        for x in 0...(hourlyWeatherArray.count - 1) {
+            tempArray.append(hourlyWeatherArray[x].temperatureF)
+        }
+        
+        return tempArray
+    }
+
+
 }
 

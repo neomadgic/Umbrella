@@ -95,7 +95,11 @@ class Weather {
                     let json = JSON(value)
                     print("JSON: \(json)")
                     
-                    self._city = json["current_observation"]["display_location"]["full"].stringValue
+                    guard let cityFromJson = json["current_observation"]["display_location"]["full"].string else {
+                            return
+                    }
+                    
+                    self._city = cityFromJson
                     self._currentTempF = json["current_observation"]["temp_f"].doubleValue
                     self._currentTempC = json["current_observation"]["temp_c"].doubleValue
                     self._currentCondition = json["current_observation"]["weather"].stringValue

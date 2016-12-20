@@ -24,31 +24,62 @@ class WeatherCell: UICollectionViewCell {
         let solidIcon = "\(hourlyWeather.icon)".nrd_weatherIconURL(highlighted: true)
         let outlineIcon = "\(hourlyWeather.icon)".nrd_weatherIconURL()
         
-        downloadImage(url: outlineIcon!)
-        iconImage.image = iconImage.image!.withRenderingMode(.alwaysTemplate)
-        iconImage.tintColor = UIColor.black
+        DispatchQueue.global(qos: .background).async {
+            self.downloadImage(url: outlineIcon!)
+            DispatchQueue.main.async {
+                self.iconImage.image = self.iconImage.image!.withRenderingMode(.alwaysTemplate)
+                self.iconImage.tintColor = UIColor.black
+                self.timeLbl.text = hourlyWeather.time
+                if isTempF == true {
+                    self.tempLbl.text = "\(hourlyWeather.temperatureF)"
+                }
+                else {
+                    self.tempLbl.text = "\(hourlyWeather.temperatureC)"
+                }
+                self.tempLbl.roundTemperature()
+                self.tempLbl.addDegreeSign()
+                
+                if hourlyWeather.isHigh == true {
+                    
+                    self.downloadImage(url: solidIcon!)
+                    self.changeColor(color: warmColor)
+                }
+                
+                if hourlyWeather.isLow == true {
+                    
+                    self.downloadImage(url: solidIcon!)
+                    self.changeColor(color: coolColor)
+                }
+
+            }
+        }
         
-        timeLbl.text = hourlyWeather.time
-        if isTempF == true {
-            tempLbl.text = "\(hourlyWeather.temperatureF)"
-        }
-        else {
-            tempLbl.text = "\(hourlyWeather.temperatureC)"
-        }
-        tempLbl.roundTemperature()
-        tempLbl.addDegreeSign()
         
-        if hourlyWeather.isHigh == true {
-            
-            downloadImage(url: solidIcon!)
-            changeColor(color: warmColor)
-        }
+//        downloadImage(url: outlineIcon!)
+//        iconImage.image = iconImage.image!.withRenderingMode(.alwaysTemplate)
+//        iconImage.tintColor = UIColor.black
         
-        if hourlyWeather.isLow == true {
-            
-            downloadImage(url: solidIcon!)
-            changeColor(color: coolColor)
-        }
+//        timeLbl.text = hourlyWeather.time
+//        if isTempF == true {
+//            tempLbl.text = "\(hourlyWeather.temperatureF)"
+//        }
+//        else {
+//            tempLbl.text = "\(hourlyWeather.temperatureC)"
+//        }
+//        tempLbl.roundTemperature()
+//        tempLbl.addDegreeSign()
+//        
+//        if hourlyWeather.isHigh == true {
+//            
+//            downloadImage(url: solidIcon!)
+//            changeColor(color: warmColor)
+//        }
+//        
+//        if hourlyWeather.isLow == true {
+//            
+//            downloadImage(url: solidIcon!)
+//            changeColor(color: coolColor)
+//        }
         
     }
     

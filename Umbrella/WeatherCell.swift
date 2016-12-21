@@ -14,6 +14,7 @@ class WeatherCell: UICollectionViewCell {
     @IBOutlet weak var tempLbl: CurrentTemperatureLabel!
     @IBOutlet weak var iconImage: UIImageView!
     
+    let imageCache = NSCache<NSString, UIImage>()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +26,8 @@ class WeatherCell: UICollectionViewCell {
         let outlineIcon = "\(hourlyWeather.icon)".nrd_weatherIconURL()
         
         DispatchQueue.global(qos: .background).async {
-            self.downloadImage(url: outlineIcon!)
+        
+            self.downloadImage(url: outlineIcon!, condition: hourlyWeather.icon, iconStatus: "outline")
             DispatchQueue.main.async {
                 self.iconImage.image = self.iconImage.image!.withRenderingMode(.alwaysTemplate)
                 self.iconImage.tintColor = UIColor.black
@@ -41,13 +43,13 @@ class WeatherCell: UICollectionViewCell {
                 
                 if hourlyWeather.isHigh == true {
                     
-                    self.downloadImage(url: solidIcon!)
+                    self.downloadImage(url: solidIcon!, condition: hourlyWeather.icon, iconStatus: "solid")
                     self.changeColor(color: warmColor)
                 }
                 
                 if hourlyWeather.isLow == true {
                     
-                    self.downloadImage(url: solidIcon!)
+                    self.downloadImage(url: solidIcon!, condition: hourlyWeather.icon, iconStatus: "solid")
                     self.changeColor(color: coolColor)
                 }
 
@@ -91,10 +93,21 @@ class WeatherCell: UICollectionViewCell {
         iconImage.tintColor = color
     }
     
-    func downloadImage(url: URL) {
+    func downloadImage(url: URL, condition: String, iconStatus: String) {
+        
+        let key = condition + iconStatus as NSString
+        
+        //check image cache
+        if self.imageCache.object(forKey: key) != nil {
+            let cacheImage = self.imageCache.object(forKey: key)! as UIImage
+            print("image cache")
+            iconImage.image = cacheImage
+            return
+        }
         
         do {
             let data = try Data(contentsOf: url)
+            self.imageCache.setObject(UIImage(data: data)!, forKey: key as NSString)
             iconImage.image = UIImage(data: data)
         } catch let err as Error {
             print(err.localizedDescription)

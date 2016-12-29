@@ -1,15 +1,18 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A6C3BF9DD0D38BA11C6F8990821716E16DD9F988",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "67620B5EFA902936DF04070AF595B76AB0333747" : 9223372036854775807,
     "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3" : 9223372036854775807,
-    "67620B5EFA902936DF04070AF595B76AB0333747" : 9223372036854775807
+    "A6C3BF9DD0D38BA11C6F8990821716E16DD9F988" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "95C56436-7087-41B0-8991-D0D562667D9D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "67620B5EFA902936DF04070AF595B76AB0333747" : "Umbrella\/Alamofire\/",
     "C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3" : "Umbrella\/SwiftyJSON\/",
-    "67620B5EFA902936DF04070AF595B76AB0333747" : "Umbrella\/Alamofire\/"
+    "A6C3BF9DD0D38BA11C6F8990821716E16DD9F988" : "Umbrella\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Umbrella",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -19,6 +22,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/neomadgic\/Umbrella",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A6C3BF9DD0D38BA11C6F8990821716E16DD9F988"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SwiftyJSON\/SwiftyJSON",

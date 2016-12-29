@@ -15,4 +15,6 @@ let headerColor = UIColor(0x888888)
 
 let key = "189b51bbd050fc21"
 
+let imageCache = NSCache<NSString, UIImage>()
+
 typealias DownloadComplete = () -> ()

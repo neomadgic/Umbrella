@@ -13,12 +13,13 @@ class CurrentTempView: UIView {
     
     override func awakeFromNib() {
         
-        backgroundColor = warmColor
+        backgroundColor = UIColor.orgColor
+        
     }
     
     func changeToCoolColor(currentTemp: Double) {
         if currentTemp < 60 {
-            backgroundColor = coolColor
+            backgroundColor = UIColor.coolColor
         }
     }
 }

@@ -26,3 +26,11 @@ extension UIColor {
     }
     
 }
+
+public extension UIColor {
+    
+    static let orgColor = UIColor(0xFF9800)
+    static let coolColor = UIColor(0x03A9F4)
+    static let headerColor = UIColor(0x888888)
+    
+}

@@ -44,13 +44,13 @@ class WeatherCell: UICollectionViewCell {
                 if hourlyWeather.isHigh == true {
                     
                     self.downloadImage(url: solidIcon!, condition: hourlyWeather.icon, iconStatus: "solid")
-                    self.changeColor(color: warmColor)
+                    self.changeColor(color: UIColor.orgColor)
                 }
                 
                 if hourlyWeather.isLow == true {
                     
                     self.downloadImage(url: solidIcon!, condition: hourlyWeather.icon, iconStatus: "solid")
-                    self.changeColor(color: coolColor)
+                    self.changeColor(color: UIColor.coolColor)
                 }
 
             }

@@ -12,7 +12,7 @@ class HeaderColorView: UIView {
 
     override func awakeFromNib() {
         
-        backgroundColor = headerColor
+        backgroundColor = UIColor.headerColor
         
     }
 
